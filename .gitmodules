@@ -16,3 +16,30 @@
 [submodule "p/net-creds"]
 	path = p/net-creds
 	url = https://github.com/DanMcInerney/net-creds.git
+[submodule "p/nosqlmap"]
+	path = p/nosqlmap
+	url = https://github.com/tcstool/NoSQLMap.git
+[submodule "p/seclists"]
+	path = p/seclists
+	url = https://github.com/danielmiessler/SecLists.git
+[submodule "p/praedasploit"]
+	path = p/praedasploit
+	url = https://github.com/MooseDojo/praedasploit
+[submodule "p/sqlmap"]
+	path = p/sqlmap
+	url = https://github.com/sqlmapproject/sqlmap
+[submodule "p/responder"]
+	path = p/responder
+	url = https://github.com/SpiderLabs/Responder.git
+[submodule "p/wifite"]
+	path = p/wifite
+	url = https://github.com/derv82/wifite.git
+[submodule "p/rdp-sec-check"]
+	path = p/rdp-sec-check
+	url = https://github.com/portcullislabs/rdp-sec-check
+[submodule "p/xxei"]
+	path = p/xxei
+	url = https://github.com/enjoiz/XXEinjector
+[submodule "p/smbexec"]
+	path = p/smbexec
+	url = https://github.com/pentestgeek/smbexec.git

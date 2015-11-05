@@ -149,7 +149,7 @@ chmod +x install-dependencies.sh && ./install-dependencies.sh
 
 ```
 cd ~/x/p
-git clone https://github.com/pentestgeek/smbexec.git
+git submodule add https://github.com/pentestgeek/smbexec.git
 cd smbexec
 ./install.sh
 ```
@@ -164,34 +164,35 @@ sudo aptitude install masscan
 
 ```
 cd ~/x/p
-git clone https://github.com/MooseDojo/praedasploit
+git submodule add https://github.com/MooseDojo/praedasploit
 ```
 
 ### sqlmap
 
 ```
 cd ~/x/p
-git clone https://github.com/sqlmapproject/sqlmap
+git submodule add https://github.com/sqlmapproject/sqlmap
 ```
 
 ### responder
 
 ```
 cd ~/x/p
-git clone https://github.com/SpiderLabs/Responder.git responder
+git submodule add https://github.com/SpiderLabs/Responder.git responder
 ```
 
 ### nosqlmap
 
 ```
-git clone https://github.com/tcstool/NoSQLMap.git nosqlmap
+cd ~/x/p
+git submodule add https://github.com/tcstool/NoSQLMap.git nosqlmap
 ```
 
 ### seclists
 
 ```
 cd ~/x/p
-git clone https://github.com/danielmiessler/SecLists.git seclists
+git submodule add https://github.com/danielmiessler/SecLists.git seclists
 ```
 
 ### net-creds pcap parser
@@ -205,13 +206,15 @@ git submodule add https://github.com/DanMcInerney/net-creds.git
 ### wifite
 
 ```
-git clone https://github.com/derv82/wifite.git
+cd ~/x/p
+git submodule add https://github.com/derv82/wifite.git
 ```
 
 ### xxei
 
 ```
-git clone https://github.com/enjoiz/XXEinjector xxei
+cd ~/x/p
+git submodule add https://github.com/enjoiz/XXEinjector xxei
 ```
 
 ### upnp
@@ -253,7 +256,7 @@ deact
 
 ```
 cd ~/x/p
-https://github.com/portcullislabs/rdp-sec-check
+git submodule add https://github.com/portcullislabs/rdp-sec-check
 sudo cpan
 > install Encoding::BER
 ```
