@@ -1,10 +1,11 @@
 /b/firefox/
 /b/jdk*
-/b/jre
+/b/jre*
 /b/sqldeveloper/
 /h
 /o/
 /p/burp/
+/p/empire/
 /p/gwt-toolset/
 /p/httpscreenshot/
 /p/jdwp-shellifier/
@@ -15,7 +16,7 @@
 /p/rdp-sec-check/
 /p/responder/
 /p/rtl8188eu/
-!/p/rtl8188eu/control_ap.
+!/p/rtl8188eu/control_ap.*
 /p/seclists/
 /p/smbexec/
 /p/sqlmap/
