@@ -1,0 +1,18 @@
+[submodule "p/empire"]
+	path = p/empire
+	url = https://github.com/PowerShellEmpire/Empire
+[submodule "p/rtl8188eu"]
+	path = p/rtl8188eu
+	url = https://github.com/lwfinger/rtl8188eu
+[submodule "b/ve"]
+	path = b/ve
+	url = https://github.com/hvqzao/ve
+[submodule "p/httpscreenshot"]
+	path = p/httpscreenshot
+	url = https://github.com/breenmachine/httpscreenshot.git
+[submodule "p/jdwp-shellifier"]
+	path = p/jdwp-shellifier
+	url = https://github.com/IOActive/jdwp-shellifier
+[submodule "p/net-creds"]
+	path = p/net-creds
+	url = https://github.com/DanMcInerney/net-creds.git

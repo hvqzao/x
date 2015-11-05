@@ -138,7 +138,8 @@ sudo ./install.sh
 
 ```
 cd ~/x/p
-git clone https://github.com/breenmachine/httpscreenshot.git
+#git clone https://github.com/breenmachine/httpscreenshot.git
+git submodule add https://github.com/breenmachine/httpscreenshot.git
 pip install selenium
 cd httpscreenshot/
 chmod +x install-dependencies.sh && ./install-dependencies.sh
@@ -189,13 +190,16 @@ git clone https://github.com/tcstool/NoSQLMap.git nosqlmap
 ### seclists
 
 ```
+cd ~/x/p
 git clone https://github.com/danielmiessler/SecLists.git seclists
 ```
 
 ### net-creds pcap parser
 
 ```
-git clone https://github.com/DanMcInerney/net-creds.git
+cd ~/x/p
+#git clone https://github.com/DanMcInerney/net-creds.git
+git submodule add https://github.com/DanMcInerney/net-creds.git
 ```
 
 ### wifite
@@ -258,7 +262,8 @@ sudo cpan
 
 ```
 cd ~/x/p
-git clone https://github.com/lwfinger/rtl8188eu
+#git clone https://github.com/lwfinger/rtl8188eu
+git submodule add https://github.com/lwfinger/rtl8188eu
 ```
 
 ### windows-exploit-suggester
@@ -288,13 +293,16 @@ mv bootstrap.sh owtf/p_bootstrap.sh
 
 ```
 cd ~/x/p
-git clone https://github.com/IOActive/jdwp-shellifier
+#git clone https://github.com/IOActive/jdwp-shellifier
+git submodule add https://github.com/IOActive/jdwp-shellifier
 ```
 
 ### gwt-toolset
 
 ```
-get clone https://github.com/GDSSecurity/GWT-Penetration-Testing-Toolset.git gwt-toolset
+cd ~/x/p
+#get clone https://github.com/GDSSecurity/GWT-Penetration-Testing-Toolset.git gwt-toolset
+git submodule add https://github.com/GDSSecurity/GWT-Penetration-Testing-Toolset.git gwt-toolset
 ```
 
 ### vpnbook
@@ -309,6 +317,10 @@ ln -s thsosrtl/VeePeeNee/VeePeeNee.sh
 
 ### empire
 
-git clone https://github.com/PowerShellEmpire/Empire empire
+```
+cd ~/x/p
+#git clone https://github.com/PowerShellEmpire/Empire empire
+git submodule add https://github.com/PowerShellEmpire/Empire empire
+```
 
 
