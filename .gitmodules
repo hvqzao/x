@@ -55,3 +55,9 @@
 [submodule "p/vpnbook/thsosrtl"]
 	path = p/vpnbook/thsosrtl
 	url = https://github.com/Top-Hat-Sec/thsosrtl
+[submodule "p/ipport"]
+	path = p/ipport
+	url = https://github.com/hvqzao/ipport
+[submodule "p/udp-proto-scanner"]
+	path = p/udp-proto-scanner
+	url = https://github.com/portcullislabs/udp-proto-scanner

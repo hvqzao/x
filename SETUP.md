@@ -321,4 +321,23 @@ cd ~/x/p
 git submodule add https://github.com/PowerShellEmpire/Empire empire
 ```
 
+### ipport
+
+```
+cd ~/x/p
+git submodule add https://github.com/hvqzao/ipport
+```
+
+### udp-proto-scanner
+
+```
+cd ~/x/p
+git submodule add https://github.com/portcullislabs/udp-proto-scanner
+```
+
+### FIX https support for wfuzz
+
+```
+sudo sed -i 's/SSL_VERIFYHOST,1/SSL_VERIFYHOST,0/g' /usr/share/wfuzz/reqresp.py
+```
 

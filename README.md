@@ -7,11 +7,9 @@ For deployment instructions, refer to [SETUP](SETUP.md) (tested in Kali 2.0).
 ```
  ~/x/
    ├── b/  - binary installations
-   ├── e/  - exploitation skel 
-   ├── h   - host shared
+   ├── e/  - extras
    ├── p/  - pentest tools
-   ├── t/  - undergoing tests
-   └── u   - untrust shared
+   └── t/  - undergoing tests
 ```
 
 ## License
