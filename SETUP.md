@@ -129,7 +129,7 @@ sudo aptitude install cairo-dock
 
 ```
 cd ~/x/p
-git clone git clone https://github.com/secretsquirrel/the-backdoor-factory
+git submodule add https://github.com/secretsquirrel/the-backdoor-factory
 cd the-backdoor-factory
 sudo ./install.sh
 ```
@@ -138,7 +138,6 @@ sudo ./install.sh
 
 ```
 cd ~/x/p
-#git clone https://github.com/breenmachine/httpscreenshot.git
 git submodule add https://github.com/breenmachine/httpscreenshot.git
 pip install selenium
 cd httpscreenshot/
@@ -199,7 +198,6 @@ git submodule add https://github.com/danielmiessler/SecLists.git seclists
 
 ```
 cd ~/x/p
-#git clone https://github.com/DanMcInerney/net-creds.git
 git submodule add https://github.com/DanMcInerney/net-creds.git
 ```
 
@@ -265,7 +263,6 @@ sudo cpan
 
 ```
 cd ~/x/p
-#git clone https://github.com/lwfinger/rtl8188eu
 git submodule add https://github.com/lwfinger/rtl8188eu
 ```
 
@@ -273,7 +270,7 @@ git submodule add https://github.com/lwfinger/rtl8188eu
 
 ```
 cd ~/x/p
-git clone https://github.com/GDSSecurity/Windows-Exploit-Suggester.git windows-exploit-suggester
+git submodule add https://github.com/GDSSecurity/Windows-Exploit-Suggester.git windows-exploit-suggester
 aptitude install python-xlrd
 cd windows-exploit-suggester
 ./windows-exploit-suggester.py --update
@@ -296,7 +293,6 @@ mv bootstrap.sh owtf/p_bootstrap.sh
 
 ```
 cd ~/x/p
-#git clone https://github.com/IOActive/jdwp-shellifier
 git submodule add https://github.com/IOActive/jdwp-shellifier
 ```
 
@@ -313,7 +309,7 @@ git submodule add https://github.com/GDSSecurity/GWT-Penetration-Testing-Toolset
 ```
 cd ~/x/p
 mkdir vpnbook
-git clone https://github.com/Top-Hat-Sec/thsosrtl vpnbook/thsosrtl
+git submodule add https://github.com/Top-Hat-Sec/thsosrtl vpnbook/thsosrtl
 cd vpnbook
 ln -s thsosrtl/VeePeeNee/VeePeeNee.sh 
 ```
@@ -322,7 +318,6 @@ ln -s thsosrtl/VeePeeNee/VeePeeNee.sh
 
 ```
 cd ~/x/p
-#git clone https://github.com/PowerShellEmpire/Empire empire
 git submodule add https://github.com/PowerShellEmpire/Empire empire
 ```
 

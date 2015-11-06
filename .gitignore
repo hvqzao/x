@@ -4,12 +4,11 @@
 /b/sqldeveloper/
 /h
 /o/
-/p/burp/
-/p/owtf/
-/p/the-backdoor-factory/
-/p/vpnbook/
-/p/windows-exploit-suggester/
-/p/bootstrap.sh
+/p/burp/*
+!/p/burp/burp
+!/p/burp/BurpSuite3.ico
+!/p/burp/BurpSuite3.png
+/p/owtf
 /t/
 /u
 .swp

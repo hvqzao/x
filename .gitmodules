@@ -43,3 +43,15 @@
 [submodule "p/smbexec"]
 	path = p/smbexec
 	url = https://github.com/pentestgeek/smbexec.git
+[submodule "p/gwt-toolset"]
+	path = p/gwt-toolset
+	url = https://github.com/GDSSecurity/GWT-Penetration-Testing-Toolset.git
+[submodule "p/the-backdoor-factory"]
+	path = p/the-backdoor-factory
+	url = https://github.com/secretsquirrel/the-backdoor-factory
+[submodule "p/windows-exploit-suggester"]
+	path = p/windows-exploit-suggester
+	url = https://github.com/GDSSecurity/Windows-Exploit-Suggester.git
+[submodule "p/vpnbook/thsosrtl"]
+	path = p/vpnbook/thsosrtl
+	url = https://github.com/Top-Hat-Sec/thsosrtl
