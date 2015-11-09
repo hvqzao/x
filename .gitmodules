@@ -61,3 +61,9 @@
 [submodule "p/udp-proto-scanner"]
 	path = p/udp-proto-scanner
 	url = https://github.com/portcullislabs/udp-proto-scanner
+[submodule "p/nishang"]
+	path = p/nishang
+	url = https://github.com/samratashok/nishang
+[submodule "p/ysoserial/src"]
+	path = p/ysoserial/src
+	url = https://github.com/frohoff/ysoserial

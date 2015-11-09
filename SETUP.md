@@ -341,3 +341,19 @@ git submodule add https://github.com/portcullislabs/udp-proto-scanner
 sudo sed -i 's/SSL_VERIFYHOST,1/SSL_VERIFYHOST,0/g' /usr/share/wfuzz/reqresp.py
 ```
 
+### nishang
+
+```
+cd ~/x/p
+git submodule add https://github.com/samratashok/nishang
+```
+
+### ysoserial
+
+```
+cd ~/x/p
+mkdir ysoserial
+cd ysoserial
+wget "https://github.com/frohoff/ysoserial/releases/download/v0.0.2/ysoserial-0.0.2-all.jar"
+git submodule add https://github.com/frohoff/ysoserial src
+```
