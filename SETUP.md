@@ -24,8 +24,8 @@ deb-src http://kali.mirror.garr.it/mirrors/kali-security/ sana/updates main cont
 ### aptitude
 
 ```sh
-sudo aptitude install build-essential libpcap-dev rsh-client hostapd
-sudo aptitude install dmz-cursor-theme mc vim-nox alacarte
+sudo aptitude install build-essential libpcap-dev rsh-client hostapd ethstats
+sudo aptitude install dmz-cursor-theme mc vim-nox alacarte flashplugin-nonfree
 ```
 
 ### Hardware specific, T520
@@ -357,3 +357,8 @@ cd ysoserial
 wget "https://github.com/frohoff/ysoserial/releases/download/v0.0.2/ysoserial-0.0.2-all.jar"
 git submodule add https://github.com/frohoff/ysoserial src
 ```
+
+### oracle client basic+sqlplus (x64)
+
+# http://www.oracle.com/technetwork/topics/linuxx86-64soft-092277.html
+# installation instructions are there, target: /opt/oracle/instantclient_12_1
