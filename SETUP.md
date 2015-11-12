@@ -24,8 +24,8 @@ deb-src http://kali.mirror.garr.it/mirrors/kali-security/ sana/updates main cont
 ### aptitude
 
 ```sh
-sudo aptitude install build-essential libpcap-dev rsh-client hostapd ethstats
-sudo aptitude install dmz-cursor-theme mc vim-nox alacarte flashplugin-nonfree
+sudo aptitude install build-essential libpcap-dev rsh-client hostapd ethstats irssi \
+dmz-cursor-theme mc vim-nox alacarte flashplugin-nonfree
 ```
 
 ### Hardware specific, T520
@@ -99,6 +99,21 @@ sudo aptitude install libappindicator1
 # download jdk to x/b
 # ln -s jdk1.8.0_65/ jdk
 # ln -s jdk1.8.0_65/ jre
+```
+
+```sh
+sudo update-alternatives --install "/usr/bin/java" java $HOME/x/b/jdk/bin/java 1
+sudo update-alternatives --set java $HOME/x/b/jdk/bin/java
+sudo update-alternatives --install "/usr/bin/rmiregistry" rmiregistry $HOME/x/b/jdk/bin/rmiregistry 1
+sudo update-alternatives --set rmiregistry $HOME/x/b/jdk/bin/rmiregistry
+sudo update-alternatives --install "/usr/bin/rmid" rmid $HOME/x/b/jdk/bin/rmid 1
+sudo update-alternatives --set rmid $HOME/x/b/jdk/bin/rmid
+sudo update-alternatives --install "/usr/bin/policytool" policytool $HOME/x/b/jdk/bin/policytool 1
+sudo update-alternatives --set policytool $HOME/x/b/jdk/bin/policytool
+sudo update-alternatives --install "/usr/bin/keytool" keytool $HOME/x/b/jdk/bin/keytool 1
+sudo update-alternatives --set keytool $HOME/x/b/jdk/bin/keytool
+sudo update-alternatives --install "/usr/bin/servertool" servertool $HOME/x/b/jdk/bin/servertool 1
+sudo update-alternatives --set servertool $HOME/x/b/jdk/bin/servertool
 ```
 
 ### BurpSuite Pro
@@ -362,3 +377,4 @@ git submodule add https://github.com/frohoff/ysoserial src
 
 # http://www.oracle.com/technetwork/topics/linuxx86-64soft-092277.html
 # installation instructions are there, target: /opt/oracle/instantclient_12_1
+
