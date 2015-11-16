@@ -67,3 +67,9 @@
 [submodule "p/ysoserial/src"]
 	path = p/ysoserial/src
 	url = https://github.com/frohoff/ysoserial
+[submodule "p/discover"]
+	path = p/discover
+	url = https://github.com/leebaird/discover.git
+[submodule "p/wifiphisher"]
+	path = p/wifiphisher
+	url = https://github.com/sophron/wifiphisher

@@ -25,7 +25,7 @@ deb-src http://kali.mirror.garr.it/mirrors/kali-security/ sana/updates main cont
 
 ```sh
 sudo aptitude install build-essential libpcap-dev rsh-client hostapd ethstats irssi \
-dmz-cursor-theme mc vim-nox alacarte flashplugin-nonfree
+dmz-cursor-theme mc vim-nox alacarte flashplugin-nonfree ipcalc
 ```
 
 ### Hardware specific, T520
@@ -358,14 +358,14 @@ sudo sed -i 's/SSL_VERIFYHOST,1/SSL_VERIFYHOST,0/g' /usr/share/wfuzz/reqresp.py
 
 ### nishang
 
-```
+```sh
 cd ~/x/p
 git submodule add https://github.com/samratashok/nishang
 ```
 
 ### ysoserial
 
-```
+```sh
 cd ~/x/p
 mkdir ysoserial
 cd ysoserial
@@ -375,6 +375,59 @@ git submodule add https://github.com/frohoff/ysoserial src
 
 ### oracle client basic+sqlplus (x64)
 
+```sh
 # http://www.oracle.com/technetwork/topics/linuxx86-64soft-092277.html
 # installation instructions are there, target: /opt/oracle/instantclient_12_1
+```
 
+### testssl
+
+```sh
+cd ~/x/p
+mkdir testssl
+cd testssl
+wget https://testssl.sh/CHANGELOG.txt
+wget https://testssl.sh/LICENSE.txt
+wget https://testssl.sh/OPENSSL-LICENSE.txt
+wget https://testssl.sh/bash-heartbleed.changelog.txt
+wget https://testssl.sh/bash-heartbleed.sh
+wget https://testssl.sh/ccs-injection.sh
+wget https://testssl.sh/mapping-rfc.txt
+wget https://testssl.sh/openssl-1.0.2e-chacha.pm.ipv6.Linux.tar.gz
+wget https://testssl.sh/openssl-1.0.2e-chacha.pm.ipv6.Linux.tar.gz.asc
+wget https://testssl.sh/openssl-1.0.2e-chacha.pm.tar.gz
+wget https://testssl.sh/openssl-1.0.2e-chacha.pm.tar.gz.asc
+wget https://testssl.sh/openssl-rfc.mappping.html
+wget https://testssl.sh/testssl.sh
+wget https://testssl.sh/testssl.sh.asc
+chmod +x *.sh
+tar zxvf openssl-1.0.2e-chacha.pm.tar.gz
+# usage: testssl --openssl=bin <...>
+```
+
+### discover
+
+```sh
+cd ~/x/p
+git submodule add https://github.com/leebaird/discover.git
+cd discover
+sudo ./update.sh
+```
+
+### heartbleed
+
+```sh
+cd ~/x/p
+mkdir heartbleed
+cd heartbleed
+wget https://raw.githubusercontent.com/HackerFantastic/Public/master/exploits/heartbleed.c
+gcc heartbleed.c -o heartbleed -Wl,-Bstatic -lssl -Wl,-Bdynamic -lssl3 -lcrypto
+chmod +x heartbleed
+```
+
+### wiphisher
+
+```sh
+cd ~/x/p
+git submodule add https://github.com/sophron/wifiphisher
+```
