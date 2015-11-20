@@ -412,6 +412,7 @@ cd ~/x/p
 git submodule add https://github.com/leebaird/discover.git
 cd discover
 sudo ./update.sh
+sudo ln -s $HOME/x/p/discover /opt
 ```
 
 ### heartbleed
@@ -430,4 +431,16 @@ chmod +x heartbleed
 ```sh
 cd ~/x/p
 git submodule add https://github.com/sophron/wifiphisher
+```
+
+### soap-ui
+
+```sh
+# http://www.soapui.org/downloads/soapui/open-source.html 
+cd ~/x/b
+mkdir soap-ui
+cd soap-ui
+wget http://cdn01.downloads.smartbear.com/soapui/5.2.1/SoapUI-x64-5.2.1.sh
+chmod +x SoapUI-x64-5.2.1.sh 
+./!$
 ```
