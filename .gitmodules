@@ -73,3 +73,6 @@
 [submodule "p/wifiphisher"]
 	path = p/wifiphisher
 	url = https://github.com/sophron/wifiphisher
+[submodule "p/clusterd"]
+	path = p/clusterd
+	url = https://github.com/hatRiot/clusterd

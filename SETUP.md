@@ -444,3 +444,10 @@ wget http://cdn01.downloads.smartbear.com/soapui/5.2.1/SoapUI-x64-5.2.1.sh
 chmod +x SoapUI-x64-5.2.1.sh 
 ./!$
 ```
+
+### clusterd
+
+```sh
+cd ~/x/p
+git submodule add https://github.com/hatRiot/clusterd
+```
