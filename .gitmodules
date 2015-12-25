@@ -79,3 +79,6 @@
 [submodule "p/hashid"]
 	path = p/hashid
 	url = https://github.com/psypanda/hashID
+[submodule "p/hqlmap"]
+	path = p/hqlmap
+	url = https://github.com/PaulSec/HQLmap

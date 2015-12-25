@@ -459,3 +459,9 @@ cd ~/x/p
 git submodule add https://github.com/psypanda/hashID hashid
 ```
 
+### HQLmap
+
+```sh
+cd ~/x/p
+git submodule add https://github.com/PaulSec/HQLmap hqlmap
+```
