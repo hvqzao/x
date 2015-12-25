@@ -76,3 +76,6 @@
 [submodule "p/clusterd"]
 	path = p/clusterd
 	url = https://github.com/hatRiot/clusterd
+[submodule "p/hashid"]
+	path = p/hashid
+	url = https://github.com/psypanda/hashID

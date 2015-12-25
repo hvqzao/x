@@ -451,3 +451,11 @@ chmod +x SoapUI-x64-5.2.1.sh
 cd ~/x/p
 git submodule add https://github.com/hatRiot/clusterd
 ```
+
+### hashID
+
+```sh
+cd ~/x/p
+git submodule add https://github.com/psypanda/hashID hashid
+```
+
