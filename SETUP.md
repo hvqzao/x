@@ -470,6 +470,7 @@ git submodule add https://github.com/PaulSec/HQLmap hqlmap
 
 ```sh
 cd ~/x/p/burp/unofficial
+wget https://github.com/DirectDefense/SuperSerial/releases/download/0.3/superserial-passive-0.3.jar
 git submodule add https://github.com/DirectDefense/SuperSerial super-serial
 ```
 
@@ -477,6 +478,7 @@ git submodule add https://github.com/DirectDefense/SuperSerial super-serial
 
 ```sh
 cd ~/x/p/burp/unofficial
+wget https://github.com/hvqzao/burp-flow/releases/download/v1.02/flow.jar
 git submodule add https://github.com/hvqzao/burp-flow flow
 ```
 
@@ -484,6 +486,7 @@ git submodule add https://github.com/hvqzao/burp-flow flow
 
 ```sh
 cd ~/x/p/burp/unofficial
+wget https://github.com/hvqzao/burp-wildcard/releases/download/v1.02/wildcard.jar
 git submodule add https://github.com/hvqzao/burp-wildcard wildcard
 ```
 
