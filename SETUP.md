@@ -89,7 +89,7 @@ sudo aptitude install libappindicator1
 
 ```sh
 # alacarte setup
-# Firefox: /home/nme/x/b/firefox/firefox -P firefox -no-remote
+# Firefox: $HOME/x/b/firefox/firefox -P firefox -no-remote
 # Iceweasel: /usr/bin/iceweasel -P iceweasel -no-remote
 ```
 
@@ -465,3 +465,25 @@ git submodule add https://github.com/psypanda/hashID hashid
 cd ~/x/p
 git submodule add https://github.com/PaulSec/HQLmap hqlmap
 ```
+
+### BurpSuite, SuperSerial
+
+```sh
+cd ~/x/p/burp/unofficial
+git submodule add https://github.com/DirectDefense/SuperSerial super-serial
+```
+
+### BurpSuite, burp-flow
+
+```sh
+cd ~/x/p/burp/unofficial
+git submodule add https://github.com/hvqzao/burp-flow flow
+```
+
+### BurpSuite, burp-wildcard
+
+```sh
+cd ~/x/p/burp/unofficial
+git submodule add https://github.com/hvqzao/burp-wildcard wildcard
+```
+

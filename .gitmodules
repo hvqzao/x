@@ -82,3 +82,12 @@
 [submodule "p/hqlmap"]
 	path = p/hqlmap
 	url = https://github.com/PaulSec/HQLmap
+[submodule "p/burp/unofficial/super-serial"]
+	path = p/burp/unofficial/super-serial
+	url = https://github.com/DirectDefense/SuperSerial
+[submodule "p/burp/unofficial/flow"]
+	path = p/burp/unofficial/flow
+	url = https://github.com/hvqzao/burp-flow
+[submodule "p/burp/unofficial/wildcard"]
+	path = p/burp/unofficial/wildcard
+	url = https://github.com/hvqzao/burp-wildcard

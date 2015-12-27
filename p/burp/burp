@@ -1,4 +1,4 @@
 #!/bin/bash
 cd ~/x/p/burp/
 #-XX:MaxPermSize=1G
-../../b/jre/bin/java -Dsun.java2d.noddraw=true -jar burpsuite_pro_v1.6.30.jar
+../../b/jre/bin/java -Dsun.java2d.noddraw=true -jar burpsuite_pro_v1.6.32.jar
