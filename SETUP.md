@@ -25,7 +25,7 @@ deb-src http://kali.mirror.garr.it/mirrors/kali-security/ sana/updates main cont
 
 ```sh
 sudo aptitude install build-essential libpcap-dev rsh-client hostapd ethstats irssi \
-dmz-cursor-theme mc vim-nox alacarte flashplugin-nonfree ipcalc
+dmz-cursor-theme mc vim-nox alacarte flashplugin-nonfree ipcalc htop
 ```
 
 ### Hardware specific, T520
@@ -488,5 +488,12 @@ git submodule add https://github.com/hvqzao/burp-flow flow
 cd ~/x/p/burp/unofficial
 wget https://github.com/hvqzao/burp-wildcard/releases/download/v1.02/wildcard.jar
 git submodule add https://github.com/hvqzao/burp-wildcard wildcard
+```
+
+### BSQLInjector
+
+```sh
+cd ~/x/p
+git submodule add https://github.com/enjoiz/BSQLinjector bsql-injector
 ```
 

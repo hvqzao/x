@@ -91,3 +91,6 @@
 [submodule "p/burp/unofficial/wildcard"]
 	path = p/burp/unofficial/wildcard
 	url = https://github.com/hvqzao/burp-wildcard
+[submodule "p/bsql-injector"]
+	path = p/bsql-injector
+	url = https://github.com/enjoiz/BSQLinjector
