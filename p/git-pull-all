@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -maxdepth 3 -name ".git" | sed 's/.git$//' | while read i ; do echo $i ; cd $i ; git pull ; cd - >/dev/null ; done
+find . -maxdepth 3 -name ".git" | sed 's/.git$//' | while read i ; do echo -e "\e[94m$i\e[39m" ; cd $i ; git pull ; cd - >/dev/null ; done
