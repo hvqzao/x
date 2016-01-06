@@ -1,4 +1,4 @@
-# Setup notes
+# Setup
 
 ### Kali Sana mirror
 
@@ -28,22 +28,21 @@ sudo aptitude install build-essential libpcap-dev rsh-client hostapd ethstats ir
 dmz-cursor-theme mc vim-nox alacarte flashplugin-nonfree ipcalc htop
 ```
 
-### Hardware specific, T520
+### pip
 
 ```sh
-# T520 remap Prev/Next to PgUp/PgDn
+pip install --upgrade pip
+pip install selenium
+```
+
+### (optional) hardware specific, Lenovo T520
+
+```sh
+# Lenovo T520 remap Prev/Next to PgUp/PgDn
 cat >>~/.bashrc <<EOF
 
 xmodmap -e 'keycode 167=Next'
 xmodmap -e 'keycode 166=Prior'
-EOF
-```
-
-### vim-nox
-
-```sh
-sudo cat >>/etc/vim/vimrc.local <<EOF
-syntax on
 EOF
 ```
 
@@ -97,8 +96,8 @@ sudo aptitude install libappindicator1
 
 ```sh
 # download jdk to x/b
-# ln -s jdk1.8.0_65/ jdk
-# ln -s jdk1.8.0_65/ jre
+# ln -s jdk1.8.0_66/ jdk
+# ln -s jdk1.8.0_66/ jre
 ```
 
 ```sh
@@ -116,8 +115,9 @@ sudo update-alternatives --install "/usr/bin/servertool" servertool $HOME/x/b/jd
 sudo update-alternatives --set servertool $HOME/x/b/jdk/bin/servertool
 ```
 
-### BurpSuite Pro
+### vim: vimrc.local
 
+### BurpSuite Pro
 
 ### Metasploit
 
@@ -143,28 +143,21 @@ sudo aptitude install cairo-dock
 ### the-backdoor-factory
 
 ```sh
-cd ~/x/p
-git submodule add https://github.com/secretsquirrel/the-backdoor-factory
-cd the-backdoor-factory
+cd ~/x/p/the-backdoor-factory
 sudo ./install.sh
 ```
 
 ### httpscreenshot
 
 ```sh
-cd ~/x/p
-git submodule add https://github.com/breenmachine/httpscreenshot.git
-pip install selenium
-cd httpscreenshot/
+cd ~/x/p/httpscreenshot/
 chmod +x install-dependencies.sh && ./install-dependencies.sh
 ```
 
 ### smbexec
 
 ```sh
-cd ~/x/p
-git submodule add https://github.com/pentestgeek/smbexec.git
-cd smbexec
+cd ~/x/p/smbexec
 ./install.sh
 ```
 
@@ -172,62 +165,6 @@ cd smbexec
 
 ```sh
 sudo aptitude install masscan
-```
-
-### praedasploit - printer exploits
-
-```sh
-cd ~/x/p
-git submodule add https://github.com/MooseDojo/praedasploit
-```
-
-### sqlmap
-
-```sh
-cd ~/x/p
-git submodule add https://github.com/sqlmapproject/sqlmap
-```
-
-### responder
-
-```sh
-cd ~/x/p
-git submodule add https://github.com/SpiderLabs/Responder.git responder
-```
-
-### nosqlmap
-
-```sh
-cd ~/x/p
-git submodule add https://github.com/tcstool/NoSQLMap.git nosqlmap
-```
-
-### seclists
-
-```sh
-cd ~/x/p
-git submodule add https://github.com/danielmiessler/SecLists.git seclists
-```
-
-### net-creds pcap parser
-
-```sh
-cd ~/x/p
-git submodule add https://github.com/DanMcInerney/net-creds.git
-```
-
-### wifite
-
-```sh
-cd ~/x/p
-git submodule add https://github.com/derv82/wifite.git
-```
-
-### xxei
-
-```sh
-cd ~/x/p
-git submodule add https://github.com/enjoiz/XXEinjector xxei
 ```
 
 ### upnp
@@ -247,7 +184,7 @@ sudo aptitude install upnp-inspector miniupnpc
 
 ```sh
 cd ~/x/b
-https://github.com/hvqzao/ve
+# https://github.com/hvqzao/ve
 cd ve
 sudo ./ve -r
 ./ve -p
@@ -268,26 +205,17 @@ deact
 ### rdp-sec-check
 
 ```sh
-cd ~/x/p
-git submodule add https://github.com/portcullislabs/rdp-sec-check
+# requirements
 sudo cpan
 > install Encoding::BER
-```
-
-### Accesspoint - rtl8188eu
-
-```sh
-cd ~/x/p
-git submodule add https://github.com/lwfinger/rtl8188eu
 ```
 
 ### windows-exploit-suggester
 
 ```sh
-cd ~/x/p
-git submodule add https://github.com/GDSSecurity/Windows-Exploit-Suggester.git windows-exploit-suggester
+# requirements + data source
 aptitude install python-xlrd
-cd windows-exploit-suggester
+cd ~/x/p/windows-exploit-suggester
 ./windows-exploit-suggester.py --update
 ```
 
@@ -304,73 +232,10 @@ sudo ./bootstrap.sh
 mv bootstrap.sh owtf/p_bootstrap.sh
 ```
 
-### jdwp-shellifier
-
-```sh
-cd ~/x/p
-git submodule add https://github.com/IOActive/jdwp-shellifier
-```
-
-### gwt-toolset
-
-```sh
-cd ~/x/p
-#get clone https://github.com/GDSSecurity/GWT-Penetration-Testing-Toolset.git gwt-toolset
-git submodule add https://github.com/GDSSecurity/GWT-Penetration-Testing-Toolset.git gwt-toolset
-```
-
-### vpnbook
-
-```sh
-cd ~/x/p
-mkdir vpnbook
-git submodule add https://github.com/Top-Hat-Sec/thsosrtl vpnbook/thsosrtl
-cd vpnbook
-ln -s thsosrtl/VeePeeNee/VeePeeNee.sh 
-```
-
-### empire
-
-```sh
-cd ~/x/p
-git submodule add https://github.com/PowerShellEmpire/Empire empire
-```
-
-### ipport
-
-```sh
-cd ~/x/p
-git submodule add https://github.com/hvqzao/ipport
-```
-
-### udp-proto-scanner
-
-```sh
-cd ~/x/p
-git submodule add https://github.com/portcullislabs/udp-proto-scanner
-```
-
 ### FIX https support for wfuzz
 
 ```sh
 sudo sed -i 's/SSL_VERIFYHOST,1/SSL_VERIFYHOST,0/g' /usr/share/wfuzz/reqresp.py
-```
-
-### nishang
-
-```sh
-cd ~/x/p
-git submodule add https://github.com/samratashok/nishang
-```
-
-### ysoserial
-
-```sh
-cd ~/x/p
-mkdir ysoserial
-cd ysoserial
-wget "https://github.com/frohoff/ysoserial/releases/download/v0.0.2/ysoserial-0.0.2-all.jar"
-git submodule add https://github.com/frohoff/ysoserial src
 ```
 
 ### oracle client basic+sqlplus (x64)
@@ -408,9 +273,7 @@ tar zxvf openssl-1.0.2e-chacha.pm.tar.gz
 ### discover
 
 ```sh
-cd ~/x/p
-git submodule add https://github.com/leebaird/discover.git
-cd discover
+cd ~/x/p/discover
 sudo ./update.sh
 sudo ln -s $HOME/x/p/discover /opt
 ```
@@ -426,13 +289,6 @@ gcc heartbleed.c -o heartbleed -Wl,-Bstatic -lssl -Wl,-Bdynamic -lssl3 -lcrypto
 chmod +x heartbleed
 ```
 
-### wiphisher
-
-```sh
-cd ~/x/p
-git submodule add https://github.com/sophron/wifiphisher
-```
-
 ### soap-ui
 
 ```sh
@@ -444,56 +300,3 @@ wget http://cdn01.downloads.smartbear.com/soapui/5.2.1/SoapUI-x64-5.2.1.sh
 chmod +x SoapUI-x64-5.2.1.sh 
 ./!$
 ```
-
-### clusterd
-
-```sh
-cd ~/x/p
-git submodule add https://github.com/hatRiot/clusterd
-```
-
-### hashID
-
-```sh
-cd ~/x/p
-git submodule add https://github.com/psypanda/hashID hashid
-```
-
-### HQLmap
-
-```sh
-cd ~/x/p
-git submodule add https://github.com/PaulSec/HQLmap hqlmap
-```
-
-### BurpSuite, SuperSerial
-
-```sh
-cd ~/x/p/burp/unofficial
-wget https://github.com/DirectDefense/SuperSerial/releases/download/0.3/superserial-passive-0.3.jar
-git submodule add https://github.com/DirectDefense/SuperSerial super-serial
-```
-
-### BurpSuite, burp-flow
-
-```sh
-cd ~/x/p/burp/unofficial
-wget https://github.com/hvqzao/burp-flow/releases/download/v1.02/flow.jar
-git submodule add https://github.com/hvqzao/burp-flow flow
-```
-
-### BurpSuite, burp-wildcard
-
-```sh
-cd ~/x/p/burp/unofficial
-wget https://github.com/hvqzao/burp-wildcard/releases/download/v1.02/wildcard.jar
-git submodule add https://github.com/hvqzao/burp-wildcard wildcard
-```
-
-### BSQLInjector
-
-```sh
-cd ~/x/p
-git submodule add https://github.com/enjoiz/BSQLinjector bsql-injector
-```
-
