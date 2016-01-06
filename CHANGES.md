@@ -28,6 +28,7 @@ git submodule add https://github.com/PowerShellEmpire/Empire empire
 git submodule add https://github.com/hvqzao/ipport
 git submodule add https://github.com/portcullislabs/udp-proto-scanner
 git submodule add https://github.com/samratashok/nishang
+git submodule add https://github.com/rotlogix/liffy
 ```
 
 ```sh
