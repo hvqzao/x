@@ -39,6 +39,7 @@ git clone https://github.com/hvqzao/x
 #git submodule add https://github.com/portcullislabs/udp-proto-scanner
 #git submodule add https://github.com/samratashok/nishang
 #git submodule add https://github.com/rotlogix/liffy
+#git submodule add https://github.com/aboul3la/Sublist3r sublistbrute
 ```
 
 ```sh

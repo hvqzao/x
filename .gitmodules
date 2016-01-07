@@ -97,3 +97,6 @@
 [submodule "p/liffy"]
 	path = p/liffy
 	url = https://github.com/rotlogix/liffy
+[submodule "p/sublistbrute"]
+	path = p/sublistbrute
+	url = https://github.com/aboul3la/Sublist3r
