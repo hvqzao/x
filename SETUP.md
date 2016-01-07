@@ -1,5 +1,13 @@
 # Setup
 
+### Installation
+
+```sh
+cd ~
+git clone https://github.com/hvqzao/x
+~/x/c --update
+```
+
 ### (skip) Already included
 
 ```sh
@@ -68,13 +76,6 @@ cat >>~/.bashrc <<EOF
 xmodmap -e 'keycode 167=Next'
 xmodmap -e 'keycode 166=Prior'
 EOF
-```
-
-### Init submodules
-
-```sh
-git submodule update --init --recursive
-git submodule foreach git checkout
 ```
 
 ### Kali Sana mirror
