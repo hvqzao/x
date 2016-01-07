@@ -111,7 +111,7 @@ dmz-cursor-theme mc vim-nox alacarte flashplugin-nonfree ipcalc htop
 
 ```sh
 pip install --upgrade pip
-pip install selenium
+pip install --upgrade selenium
 ```
 
 ### disable avahi
@@ -219,14 +219,15 @@ sudo ./install.sh
 
 ```sh
 cd ~/x/p/httpscreenshot/
-chmod +x install-dependencies.sh && ./install-dependencies.sh
+chmod +x install-dependencies.sh && sudo ./install-dependencies.sh
 ```
 
 ### smbexec
 
 ```sh
 cd ~/x/p/smbexec
-./install.sh
+sudo ./install.sh
+#1,/opt
 ```
 
 ### masscan
@@ -293,11 +294,13 @@ cd ~/x/p/windows-exploit-suggester
 sudo pip install --upgrade cffi
 sudo pip install --upgrade cryptography
 cd ~/x/p
+git rm -r p/owtf --cached
 wget https://raw.githubusercontent.com/owtf/bootstrap-script/master/bootstrap.sh
 chmod +x bootstrap.sh
+rm -rf owtf
 sudo ./bootstrap.sh
 # 2,1
-mv bootstrap.sh owtf/p_bootstrap.sh
+sudo mv bootstrap.sh owtf/p_bootstrap.sh
 ```
 
 ### FIX https support for wfuzz

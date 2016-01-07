@@ -9,8 +9,9 @@
 !/p/burp/BurpSuite3.png
 !/p/burp/unofficial
 /p/vpnbook/VPNBOOK
+/p/owtf
 /p/heartbleed/
 /p/testssl/
 /s/
 /u
-.swp
+*.swp
