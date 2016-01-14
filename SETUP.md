@@ -11,6 +11,9 @@ git clone https://github.com/hvqzao/x
 ### (skip) Already included
 
 ```sh
+#cd ~/x/b
+#git submodule add https://github.com/hvqzao/ve
+#git submodule add https://github.com/hvqzao/endec
 #cd ~/x/p
 #git submodule add https://github.com/hatRiot/clusterd
 #git submodule add https://github.com/psypanda/hashID hashid
@@ -252,9 +255,7 @@ sudo aptitude install upnp-inspector miniupnpc
 ### ve
 
 ```sh
-cd ~/x/b
-# https://github.com/hvqzao/ve
-cd ve
+cd ~/x/b/ve
 sudo ./ve -r
 ./ve -p
 ./ve -P 2.7.10

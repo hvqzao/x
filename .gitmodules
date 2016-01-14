@@ -100,3 +100,6 @@
 [submodule "p/sublistbrute"]
 	path = p/sublistbrute
 	url = https://github.com/aboul3la/Sublist3r
+[submodule "b/endec"]
+	path = b/endec
+	url = https://github.com/hvqzao/endec
