@@ -5,7 +5,7 @@
 ```sh
 cd ~
 git clone https://github.com/hvqzao/x
-~/x/c --update
+~/x/c init
 ```
 
 ### (skip) Already included

@@ -18,7 +18,7 @@ do
             git submodule foreach git checkout
             ;;
         "update")
-            find {b,p} -maxdepth 3 -name ".git" | sed 's/.git$//' | while read i
+            find {b,p} -maxdepth 4 -name ".git" | sed 's/.git$//' | while read i
             do
                 echo -e "\e[94m$i\e[39m"
                 cd $i
@@ -39,7 +39,7 @@ do
                 f=$1
                 shift
             fi
-            find {b,p} -maxdepth 3 -name ".git" | sed 's/.git$//' | while read i
+            find {b,p} -maxdepth 4 -name ".git" | sed 's/.git$//' | while read i
             do
                 old=`git diff $i | egrep "^-Subproject" | awk '{print $3}'`
                 if [ "$old" != "" ]
