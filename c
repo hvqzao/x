@@ -13,7 +13,7 @@ do
     shift
     case "$p" in
         "init")
-            git pull
+            git pull origin master
             git submodule update --init --recursive
             git submodule foreach git checkout
             ;;
@@ -22,7 +22,7 @@ do
             do
                 echo -e "\e[94m$i\e[39m"
                 cd $i
-                git pull
+                git pull origin master
                 cd - >/dev/null
             done
             ;;
