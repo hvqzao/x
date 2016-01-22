@@ -6,6 +6,7 @@
 /o/
 /p/burp/*
 !/p/burp/burp
+!/p/burp/free
 !/p/burp/BurpSuite3.ico
 !/p/burp/BurpSuite3.png
 !/p/burp/unofficial

