@@ -5,7 +5,7 @@
 ```sh
 cd ~
 git clone https://github.com/hvqzao/x
-~/x/c init
+~/x/c pull
 ```
 
 ### (skip) Already included
@@ -69,6 +69,19 @@ git clone https://github.com/hvqzao/x
 #git submodule add https://github.com/hvqzao/burp-flow flow
 #wget https://github.com/hvqzao/burp-wildcard/releases/download/v1.02/wildcard.jar
 #git submodule add https://github.com/hvqzao/burp-wildcard wildcard
+```
+
+```sh
+#cd $HOME/x/p/fuzzdb
+#mkdir webshell
+#cp cmd.jsp webshell/
+#cd webshell
+#jar -cvf ../webshell.war *
+#cd ..
+#rm -rf webshell
+#mkdir $HOME/x/e/webshells
+#mv webshell.war !$
+# Usage after deploying: /webshell/cmd.jsp?cmd=id
 ```
 
 ### (optional) hardware specific, Lenovo T520

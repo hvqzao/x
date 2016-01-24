@@ -103,3 +103,6 @@
 [submodule "b/endec"]
 	path = b/endec
 	url = https://github.com/hvqzao/endec
+[submodule "p/fuzzdb"]
+	path = p/fuzzdb
+	url = https://github.com/fuzzdb-project/fuzzdb

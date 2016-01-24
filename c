@@ -2,7 +2,7 @@
 # ~/x/c - control script
 if [ "$#" -eq 0 ]
 then
-    echo "Usage: `basename $0` [init] [update] [updated [[submodule] [file]]]" >&2
+    echo "Usage: `basename $0` [pull] [update] [updated [[submodule] [file]]]" >&2
     exit 1
 fi
 cd ~/x
@@ -12,7 +12,7 @@ do
     p=$1
     shift
     case "$p" in
-        "init")
+        "pull")
             git pull origin master
             git submodule update --init --recursive
             git submodule foreach git checkout
