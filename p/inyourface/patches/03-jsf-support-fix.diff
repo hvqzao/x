@@ -1,0 +1,15 @@
+diff -Nur jdeserialize-syn2/src/jdeserialize.java jdeserialize-syn3/src/jdeserialize.java
+--- jdeserialize-syn2/src/jdeserialize.java	2013-07-25 21:21:37.000000000 +0200
++++ jdeserialize-syn3/src/jdeserialize.java	2013-07-25 21:28:57.000000000 +0200
+@@ -221,6 +221,11 @@
+             case ARRAY:
+                 byte stc = dis.readByte();
+                 if(f == fieldtype.ARRAY && stc != ObjectStreamConstants.TC_ARRAY) {
++                    if (stc == ObjectStreamConstants.TC_NULL)
++                        return null;
++                    if (stc == ObjectStreamConstants.TC_REFERENCE) {
++                        return new String("TODO: array_ref<"+dis.readInt()+">");
++                    }
+                     throw new IOException("array type listed, but typecode is not TC_ARRAY: " + hex(stc));
+                 }
+                 content c = read_Content(stc, dis, false);

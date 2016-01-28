@@ -10,6 +10,8 @@ git clone https://github.com/hvqzao/x
 
 ### (skip) Already included
 
+submodules:
+
 ```sh
 #cd ~/x/b
 #git submodule add https://github.com/hvqzao/ve
@@ -46,6 +48,8 @@ git clone https://github.com/hvqzao/x
 #git submodule add git clone https://github.com/frohoff/ciphr.git
 ```
 
+vpnbook:
+
 ```sh
 #cd ~/x/p
 #mkdir vpnbook
@@ -54,13 +58,17 @@ git clone https://github.com/hvqzao/x
 #ln -s thsosrtl/VeePeeNee/VeePeeNee.sh 
 ```
 
+ysoserial:
+
 ```sh
 #cd ~/x/p
 #mkdir ysoserial
 #cd ysoserial
-#wget "https://github.com/frohoff/ysoserial/releases/download/v0.0.2/ysoserial-0.0.2-all.jar"
+#wget "https://github.com/frohoff/ysoserial/releases/download/v0.0.3/ysoserial-0.0.3-all.jar"
 #git submodule add https://github.com/frohoff/ysoserial src
 ```
+
+burp plugins:
 
 ```sh
 #cd ~/x/p/burp/unofficial
@@ -71,6 +79,8 @@ git clone https://github.com/hvqzao/x
 #wget https://github.com/hvqzao/burp-wildcard/releases/download/v1.02/wildcard.jar
 #git submodule add https://github.com/hvqzao/burp-wildcard wildcard
 ```
+
+.war webshell:
 
 ```sh
 #cd $HOME/x/p/fuzzdb
@@ -83,6 +93,19 @@ git clone https://github.com/hvqzao/x
 #mkdir $HOME/x/e/webshells
 #mv webshell.war !$
 # Usage after deploying: /webshell/cmd.jsp?cmd=id
+```
+
+inyourface (java faces attacks):
+
+```sh
+#cd ~/x/p
+#wget http://www.synacktiv.com/ressources/inyourface-0.2.tar.gz
+#tar zxvf inyourface-0.2.tar.gz
+#cd inyourface
+#sudo aptitude install ant
+#ant
+#cd ..
+#rm inyourface-0.2.tar.gz
 ```
 
 ### (optional) hardware specific, Lenovo T520

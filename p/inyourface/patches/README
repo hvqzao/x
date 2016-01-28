@@ -1,0 +1,21 @@
+=== 01-null-deref-fix.diff ===
+
+Bug fix: null pointer exception.
+
+=== 02-class-annotation-fix.diff ===
+
+Bug fix: the Java specs allow annotation here.
+
+=== 03-jsf-support-fix.diff ===
+
+Needed to fully process some JSF view states.
+
+=== 04-offset-tracking-support.diff ===
+
+Remember starting and ending offsets of each object and field in
+order to allow a program to implement patching.
+
+=== 05-humanreadable-blockdata.diff ===
+
+Display blockdata in human readable way.
+

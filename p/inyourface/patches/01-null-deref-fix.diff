@@ -1,0 +1,42 @@
+diff -Nur jdeserialize-orig/src/arraycoll.java jdeserialize-syn/src/arraycoll.java
+--- jdeserialize-orig/src/arraycoll.java	2013-07-25 20:30:13.000000000 +0200
++++ jdeserialize-syn/src/arraycoll.java	2013-07-25 20:42:09.000000000 +0200
+@@ -42,7 +42,7 @@
+             } else {
+                 sb.append(", ");
+             }
+-            sb.append(o.toString());
++            sb.append(o == null ? "NULL" : o.toString());
+         }
+         return sb.toString();
+     }
+diff -Nur jdeserialize-orig/src/jdeserialize.java jdeserialize-syn/src/jdeserialize.java
+--- jdeserialize-orig/src/jdeserialize.java	2013-07-25 20:30:13.000000000 +0200
++++ jdeserialize-syn/src/jdeserialize.java	2013-07-25 20:59:49.000000000 +0200
+@@ -307,7 +307,7 @@
+             for(classdesc cd: inst.annotations.keySet()) {
+                 sb.append("    ").append(cd.name).append(linesep);
+                 for(content c: inst.annotations.get(cd)) {
+-                    sb.append("        ").append(c.toString()).append(linesep);
++                    sb.append("        ").append(c == null ? "NULL" : c.toString()).append(linesep);
+                 }
+             }
+         }
+@@ -840,7 +840,7 @@
+                     break;
+                 }
+                 content c = read_Content(tc, dis, true);
+-                System.out.println("read: " + c.toString());
++                System.out.println("read: " + (c == null ? "NULL" : c.toString()));
+                 if(c != null && c.isExceptionObject()) {
+                     c = new exceptionstate(c, lis.getRecordedData());
+                 }
+@@ -918,7 +918,7 @@
+         if(!go.hasOption("-nocontent")) {
+             System.out.println("//// BEGIN stream content output");
+             for(content c: content) {
+-                System.out.println(c.toString());
++                System.out.println(c == null ? "NULL" : c.toString());
+             }
+             System.out.println("//// END stream content output");
+             System.out.println("");

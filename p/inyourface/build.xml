@@ -1,0 +1,57 @@
+<project name="inyourface" default="default" basedir=".">
+    <property name="build.dir" value="build" />
+    <property name="lib.dir" value="lib" />
+    <property name="src.dir" value="src" />
+    <property name="javadoc.dir" value="javadoc" />
+
+    <target name="default" depends="compile, build-jar, clean" />
+
+    <target name="compile">
+        <sequential>
+            <mkdir dir="${build.dir}" />
+            <javac srcdir="${src.dir}" destdir="${build.dir}" debug="on" optimize="on" deprecation="on">
+                <compilerarg value="-Xlint" />
+		<classpath>
+			<pathelement location="lib/jdeserialize-patched.jar"/>
+			<pathelement location="lib/jcommander-1.30.jar"/>
+		</classpath>
+            </javac>
+        </sequential>
+    </target>
+
+    <target name="build-jar">
+	<delete dir="dist"/>
+	<mkdir dir="dist"/>
+	<mkdir dir="dist/bin"/>
+	<mkdir dir="dist/lib"/>
+
+	<copy todir="dist/bin">
+		<fileset dir="src/bash"/>
+	</copy>
+
+	<chmod file="dist/bin/inyourface.sh" perm="ugo+rx"/>
+
+	<copy todir="dist/lib">
+		<fileset dir="lib"/>
+	</copy>
+
+	<jar jarfile="dist/bin/${ant.project.name}.jar" basedir="build"/>
+    </target>
+
+    <target name="javadoc">
+        <sequential>
+            <mkdir dir="${build.dir}" />
+            <javadoc packagenames="com.synacktiv.*"
+                sourcepath="${src.dir}"
+                destdir="${javadoc.dir}"
+                use="true">
+                <fileset dir="." includes="${src.dir}/**/*" />
+            </javadoc>
+        </sequential>
+    </target>
+
+    <target name="clean">
+        <delete dir="${build.dir}"/>
+    </target>
+
+</project>

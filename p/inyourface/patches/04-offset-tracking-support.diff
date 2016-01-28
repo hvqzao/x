@@ -1,0 +1,246 @@
+diff -Nur jdeserialize-syn3/src/contentbase.java jdeserialize-syn4/src/contentbase.java
+--- jdeserialize-syn3/src/contentbase.java	2013-07-25 21:11:35.000000000 +0200
++++ jdeserialize-syn4/src/contentbase.java	2013-07-25 21:35:52.000000000 +0200
+@@ -26,5 +26,18 @@
+     }
+     public void validate() throws ValidityException {
+     }
++
++    private int startOffset = 0;
++    private int endOffset = 0;
++    private byte sc_type = -1; 
++
++    public int getStartOffset() { return startOffset; }
++    public void setStartOffset(int o) { startOffset = o; }
++
++    public int getEndOffset() { return endOffset; }
++    public void setEndOffset(int o) { endOffset = o; }
++
++    public byte getScType() { return sc_type; }
++    public void setScType(byte sc) { sc_type = sc; }
+ }
+ 
+diff -Nur jdeserialize-syn3/src/content.java jdeserialize-syn4/src/content.java
+--- jdeserialize-syn3/src/content.java	2013-07-25 21:11:35.000000000 +0200
++++ jdeserialize-syn4/src/content.java	2013-07-25 21:36:08.000000000 +0200
+@@ -66,5 +66,12 @@
+      * @param value the new value to use
+      */
+     public void setIsExceptionObject(boolean value);
++
++    public int getStartOffset();
++    public void setStartOffset(int off);
++    public int getEndOffset();
++    public void setEndOffset(int off);
++    public byte getScType();
++    public void setScType(byte sc);
+ }
+ 
+diff -Nur jdeserialize-syn3/src/instance.java jdeserialize-syn4/src/instance.java
+--- jdeserialize-syn3/src/instance.java	2013-07-25 21:11:35.000000000 +0200
++++ jdeserialize-syn4/src/instance.java	2013-07-25 21:36:26.000000000 +0200
+@@ -13,6 +13,9 @@
+      */
+     public Map<classdesc, Map<field, Object>> fielddata;
+ 
++    public Map<classdesc, Map<field, Integer>> fieldStartOffsets;
++    public Map<classdesc, Map<field, Integer>> fieldEndOffsets;
++
+     /**
+      * Class description for this instance.
+      */
+diff -Nur jdeserialize-syn3/src/jdeserialize.java jdeserialize-syn4/src/jdeserialize.java
+--- jdeserialize-syn3/src/jdeserialize.java	2013-07-25 21:43:12.000000000 +0200
++++ jdeserialize-syn4/src/jdeserialize.java	2013-07-25 21:55:40.000000000 +0200
+@@ -80,6 +80,8 @@
+     private int curhandle;
+     private boolean debugEnabled;
+ 
++    private LoggerInputStream inputBlob = null;
++
+     static {
+         keywordSet = new HashSet<String>();
+         for(String kw: keywords) {
+@@ -170,18 +172,26 @@
+         ArrayList<classdesc> classes = new ArrayList<classdesc>();
+         inst.classdesc.getHierarchy(classes);
+         Map<classdesc, Map<field, Object>> alldata = new HashMap<classdesc, Map<field, Object>>();
++        Map<classdesc, Map<field, Integer>> allStartOffsets = new HashMap<classdesc, Map<field, Integer>>();
++        Map<classdesc, Map<field, Integer>> allEndOffsets = new HashMap<classdesc, Map<field, Integer>>();
+         Map<classdesc, List<content>> ann = new HashMap<classdesc, List<content>>();
+         for(classdesc cd: classes) {
+             Map<field, Object> values = new HashMap<field, Object>();
++            Map<field, Integer> startOffsets = new HashMap<field, Integer>();
++            Map<field, Integer> endOffsets = new HashMap<field, Integer>();
+             if((cd.descflags & ObjectStreamConstants.SC_SERIALIZABLE) != 0) {
+                 if((cd.descflags & ObjectStreamConstants.SC_EXTERNALIZABLE) != 0) {
+                     throw new IOException("SC_EXTERNALIZABLE & SC_SERIALIZABLE encountered");
+                 }
+                 for(field f: cd.fields) {
++                    startOffsets.put(f, inputBlob.offset);
+                     Object o = read_FieldValue(f.type, dis);
++                    endOffsets.put(f, inputBlob.offset);
+                     values.put(f, o);
+                 }
+                 alldata.put(cd, values);
++                allStartOffsets.put(cd, startOffsets);
++                allEndOffsets.put(cd, endOffsets);
+                 if((cd.descflags & ObjectStreamConstants.SC_WRITE_METHOD) != 0) {
+                     if((cd.descflags & ObjectStreamConstants.SC_ENUM) != 0) {
+                         throw new IOException("SC_ENUM & SC_WRITE_METHOD encountered!");
+@@ -197,6 +207,8 @@
+         }
+         inst.annotations = ann;
+         inst.fielddata = alldata;
++        inst.fieldStartOffsets = allStartOffsets;
++        inst.fieldEndOffsets = allEndOffsets;
+     }
+ 
+     public Object read_FieldValue(fieldtype f, DataInputStream dis) throws IOException {
+@@ -533,7 +545,9 @@
+     public content read_prevObject(DataInputStream dis) throws IOException {
+             int handle = dis.readInt();
+             if(!handles.containsKey(Integer.valueOf(handle))) {
+-                throw new ValidityException("can't find an entry for handle " + hex(handle));
++                //throw new ValidityException("can't find an entry for handle " + hex(handle));
++                System.out.println("BUG: handle not found " + hex(handle));
++                return null;
+             }
+             content c = handles.get(handle);
+             debug("prevObject: handle " + hex(c.getHandle()) + " classdesc " + c.toString());
+@@ -756,42 +770,64 @@
+      * @throws IOException when a validity or I/O error occurs while reading
+      */
+     public content read_Content(byte tc, DataInputStream dis, boolean blockdata) throws IOException {
++        content c = null;
++        int startOffset = inputBlob.offset;
+         try {
+             switch(tc) {
+                 case ObjectStreamConstants.TC_OBJECT:
+-                    return read_newObject(dis);
++                    c = read_newObject(dis);
++                    break;
+                 case ObjectStreamConstants.TC_CLASS:
+-                    return read_newClass(dis);
++                    c = read_newClass(dis);
++                    break;
+                 case ObjectStreamConstants.TC_ARRAY:
+-                    return read_newArray(dis);
++                    c =  read_newArray(dis);
++                    break;
+                 case ObjectStreamConstants.TC_STRING:
+                 case ObjectStreamConstants.TC_LONGSTRING:
+-                    return read_newString(tc, dis);
++                    c = read_newString(tc, dis);
++                    break;
+                 case ObjectStreamConstants.TC_ENUM:
+-                    return read_newEnum(dis);
++                    c = read_newEnum(dis);
++                    break;
+                 case ObjectStreamConstants.TC_CLASSDESC:
+                 case ObjectStreamConstants.TC_PROXYCLASSDESC:
+-                    return handle_newClassDesc(tc, dis);
++                    c = handle_newClassDesc(tc, dis);
++                    break;
+                 case ObjectStreamConstants.TC_REFERENCE:
+-                    return read_prevObject(dis);
++                    c = read_prevObject(dis);
++                    break;
+                 case ObjectStreamConstants.TC_NULL:
+                     return null;
+                 case ObjectStreamConstants.TC_EXCEPTION:
+-                    return read_Exception(dis);
++                    c = read_Exception(dis);
++                    break;
+                 case ObjectStreamConstants.TC_BLOCKDATA:
+                 case ObjectStreamConstants.TC_BLOCKDATALONG:
+                     if(blockdata == false) {
+                         throw new IOException("got a blockdata TC_*, but not allowed here: " + hex(tc));
+                     }
+-                    return read_blockdata(tc, dis);
++                    c = read_blockdata(tc, dis);
++                    break;
+                 default:
+                     throw new IOException("unknown content tc byte in stream: " + hex(tc));
+             }
+         } catch (ExceptionReadException ere) {
+-            return ere.getExceptionObject();
++            c = ere.getExceptionObject();
++        }
++
++        // tracking offset and sc_type
++        int endOffset = inputBlob.offset;
++        if (c != null) {
++            c.setStartOffset(startOffset);
++            c.setEndOffset(endOffset);
++            c.setScType(tc);
+         }
++        return c;
+     }
+ 
++
++
+     /**
+      * <p>
+      * Reads in an entire ObjectOutputStream output on the given stream, filing 
+@@ -818,6 +854,7 @@
+         try {
+             lis = new LoggerInputStream(is);
+             dis = new DataInputStream(lis);
++            inputBlob = lis;
+ 
+             short magic = dis.readShort();
+             if(magic != ObjectStreamConstants.STREAM_MAGIC) {
+Les fichiers binaires jdeserialize-syn3/src/.jdeserialize.java.swp et jdeserialize-syn4/src/.jdeserialize.java.swp sont différents
+diff -Nur jdeserialize-syn3/src/LoggerInputStream.java jdeserialize-syn4/src/LoggerInputStream.java
+--- jdeserialize-syn3/src/LoggerInputStream.java	2013-07-25 21:11:35.000000000 +0200
++++ jdeserialize-syn4/src/LoggerInputStream.java	2013-07-25 21:51:27.000000000 +0200
+@@ -21,6 +21,7 @@
+     private InputStream innerStream = null;
+     private ByteArrayOutputStream baos = null;
+     private boolean recording = false; 
++    public int offset = 0;
+ 
+     public LoggerInputStream(InputStream innerStream) {
+         super();
+@@ -28,6 +29,7 @@
+     }
+     public synchronized int read() throws IOException {
+         int i = innerStream.read();
++        offset += 1;
+         if(recording && i != -1) {
+             if(i > 255 || i < 0) {
+                 throw new IOException("non-byte, non--1 value read from inner stream: " + i);
+@@ -37,10 +39,15 @@
+         return i;
+     }
+     public synchronized int read(byte[] b) throws IOException {
+-        return this.read(b, 0, b.length);
++        int r = this.read(b, 0, b.length);
++        if (r > 0)
++            offset += r;
++        return r;
+     }
+     public synchronized int read(byte[] b, int off, int len) throws IOException {
+         int retval = innerStream.read(b, off, len);
++        if (retval > 0)
++            offset += retval;
+         if(recording && retval > 0) {
+             if(retval > len) {
+                 throw new IOException("inner stream read(byte[], int, int) violating contract; return value > len: " + retval);
+@@ -53,6 +60,7 @@
+         if(n < 0) {
+             throw new IOException("can't skip negative number of bytes");
+         }
++        offset += n;
+         if(recording == false) {
+             return innerStream.skip(n);
+         }
+@@ -88,6 +96,7 @@
+         innerStream.mark(readlimit);
+     }
+     public synchronized void reset() throws IOException {
++        offset = 0;
+         innerStream.reset();
+     }
+     public boolean markSupported() {

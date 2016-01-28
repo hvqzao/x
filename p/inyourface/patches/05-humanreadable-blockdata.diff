@@ -1,0 +1,83 @@
+--- jdeserialize.src/src/blockdata.java	2013-07-23 14:04:43.783129695 +0200
++++ jdeserialize.syn/src/blockdata.java	2013-07-26 12:44:38.852169834 +0200
+@@ -22,7 +22,79 @@
+         super(contenttype.BLOCKDATA);
+         this.buf = buf;
+     }
++
++    private String byteToString(byte b) {
++            String hex = Integer.toHexString(0xFF & b);
++            if (hex.length() == 1) {
++                    hex = "0" + hex;
++            }
++            return "\\x" + hex;
++    }
++
++    private byte[] intToBytes(int i) {
++            byte[] bytes = new byte[4];
++            for (int k = 0; k < 4; k++) {
++                    bytes[k] = (byte)(i >>> (k * 8));
++            }
++            return bytes;
++    }
++
++    public String toHex() {
++            StringBuffer res = new StringBuffer();
++
++            byte[] size = intToBytes(buf.length);
++            if(getScType() == ObjectStreamConstants.TC_BLOCKDATA) {
++                for(int i = 0; i < 1; i++) {
++                        res.append(byteToString(size[i]));
++                }
++            } else {
++                for(int i = 0; i < 2; i++) {
++                        res.append(byteToString(size[i]));
++                }
++            }
++
++            for (int j = 0; j < buf.length; j++) {
++                    res.append(byteToString(buf[j]));
++            }
++            return res.toString();
++    }
++
++    public String toPrettyHex() {
++            String res = "";
++            int offset = 0;
++
++            while(offset+2 < buf.length) {
++                    int size = (((int)buf[offset] << 8) & 0xFF) | ((int)buf[offset+1] & 0xFF);
++                    offset += 2;
++                    if(size > 0) {
++                            if(buf.length >= offset + size) {
++                                    // test if blockdata header is store in 1 or 2 bytes
++                                    int startoff = 0;
++                                    if(getScType() == ObjectStreamConstants.TC_BLOCKDATA) {
++                                        startoff = (getStartOffset() + 1 + offset - 2);
++                                    } else {
++                                        startoff = (getStartOffset() + 2 + offset - 2);
++                                    }
++                                    res += "           from " + (startoff) + " to " + (startoff + size) + ": " + size + " bytes: ";
++                                    for (int j = offset; j < (offset+size); j++) {
++                                            short sht = (short) buf[j];
++                                            if(sht >= 32 && sht <= 127) {
++                                                    res += (char) buf[j];
++                                            } else {
++                                                    res += String.format("\\x%02x", (short) buf[j]);
++                                            }
++                                    }
++                                    res += "\n";
++                            }
++                            offset += size;
++                    } else {
++                            res += "           (empty)\n";
++                    }
++            }
++            return res;
++    }
++
+     public String toString() {
+-        return "[blockdata " + jdeserialize.hex(handle) + ": " + buf.length + " bytes]";
++	return "[blockdata from " + getStartOffset() + " to " + getEndOffset() + ": " + buf.length + " bytes]\n           raw: " + toHex() + "\n" + toPrettyHex();
+     }
+ }

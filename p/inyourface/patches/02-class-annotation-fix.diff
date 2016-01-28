@@ -1,0 +1,33 @@
+diff -Nur jdeserialize-syn/src/jdeserialize.java jdeserialize-syn2/src/jdeserialize.java
+--- jdeserialize-syn/src/jdeserialize.java	2013-07-25 20:59:49.000000000 +0200
++++ jdeserialize-syn2/src/jdeserialize.java	2013-07-25 21:21:37.000000000 +0200
+@@ -192,11 +192,7 @@
+                 if((cd.descflags & ObjectStreamConstants.SC_SERIALIZABLE) != 0) {
+                     throw new IOException("SC_SERIALIZABLE & SC_EXTERNALIZABLE encountered");
+                 }
+-                if((cd.descflags & ObjectStreamConstants.SC_BLOCK_DATA) != 0) {
+-                    throw new EOFException("hit externalizable with nonzero SC_BLOCK_DATA; can't interpret data");
+-                } else {
+-                    ann.put(cd, read_classAnnotation(dis));
+-                }
++                ann.put(cd, read_classAnnotation(dis));
+             }
+         }
+         inst.annotations = ann;
+@@ -286,7 +282,7 @@
+         while(true) {
+             byte tc = dis.readByte();
+             if(tc == ObjectStreamConstants.TC_ENDBLOCKDATA) {
+-                return list;
++                break;
+             }
+             if(tc == ObjectStreamConstants.TC_RESET) {
+                 reset();
+@@ -298,6 +294,7 @@
+             }
+             list.add(c);
+         }
++        return list;
+     }
+     public static void dump_Instance(int indentlevel, instance inst, PrintStream ps) {
+         StringBuffer sb = new StringBuffer();

