@@ -43,6 +43,7 @@ git clone https://github.com/hvqzao/x
 #git submodule add https://github.com/samratashok/nishang
 #git submodule add https://github.com/rotlogix/liffy
 #git submodule add https://github.com/aboul3la/Sublist3r sublistbrute
+#git submodule add git clone https://github.com/frohoff/ciphr.git
 ```
 
 ```sh
@@ -208,6 +209,7 @@ sudo update-alternatives --set servertool $HOME/x/b/jdk/bin/servertool
 ```sh
 sudo service postgresql start
 sudo msfdb init
+sudo update-rc.d postgresql enable
 ```
 
 ### Cairo Dock
@@ -382,4 +384,13 @@ cd ~/x/b/soap-ui
 wget http://cdn01.downloads.smartbear.com/soapui/5.2.1/SoapUI-x64-5.2.1.sh
 chmod +x SoapUI-x64-5.2.1.sh 
 ./!$
+```
+
+### ciphr
+
+```
+gem install bundler
+cd ~/x/p/ciphr
+bundle install
+sudo bundle exec rake install
 ```

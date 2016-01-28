@@ -106,3 +106,6 @@
 [submodule "p/fuzzdb"]
 	path = p/fuzzdb
 	url = https://github.com/fuzzdb-project/fuzzdb
+[submodule "p/ciphr"]
+	path = p/ciphr
+	url = https://github.com/frohoff/ciphr
