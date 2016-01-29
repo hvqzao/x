@@ -16,6 +16,8 @@ do
             git pull origin master
             git submodule update --init --recursive
             git submodule foreach git checkout
+            git checkout
+            #git checkout -f origin/master
             ;;
         "update")
             find {b,p} -maxdepth 4 -name ".git" | sed 's/.git$//' | while read i

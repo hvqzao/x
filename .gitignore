@@ -7,6 +7,10 @@
 /p/burp/*
 !/p/burp/burp
 !/p/burp/free
+/p/burp/free/*
+!/p/burp/free/burpfree
+!/p/burp/free/BurpSuite2.ico
+!/p/burp/free/BurpSuite2.png
 !/p/burp/BurpSuite3.ico
 !/p/burp/BurpSuite3.png
 !/p/burp/unofficial
