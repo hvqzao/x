@@ -8,7 +8,9 @@ git clone https://github.com/hvqzao/x
 ~/x/c pull
 ```
 
-### (skip) Already included
+See below for additonal configuration steps
+
+### (skip) The following will be already installed. No action required.
 
 submodules:
 
@@ -119,7 +121,9 @@ xmodmap -e 'keycode 166=Prior'
 EOF
 ```
 
-### Kali Sana mirror
+### (old) Kali Sana mirror
+
+/etc/apt/sources.list:
 
 ```sh
 # http://http.kali.org/README.mirrorlist
@@ -140,11 +144,34 @@ deb http://kali.mirror.garr.it/mirrors/kali-security/ sana/updates main contrib 
 deb-src http://kali.mirror.garr.it/mirrors/kali-security/ sana/updates main contrib non-free
 ```
 
+### (new) Kali Rolling mirror
+
+/etc/apt/sources.list:
+
+```sh
+deb http://kali.mirror.garr.it/mirrors/kali kali-rolling main non-free contrib
+deb-src http://kali.mirror.garr.it/mirrors/kali kali-rolling main non-free contrib
+```
+
+```sh
+aptitude update
+aptitude dist-upgrade
+aptitude -f install
+aptitude clean
+find /etc | grep \.dpkg-
+```
+
 ### aptitude
 
 ```sh
 sudo aptitude install build-essential libpcap-dev rsh-client hostapd ethstats irssi \
 dmz-cursor-theme mc vim-nox alacarte flashplugin-nonfree ipcalc htop
+```
+
+### vmware-tools
+
+```sh
+aptitude install open-vm-tools-desktop fuse zerofree
 ```
 
 ### pip
