@@ -48,6 +48,7 @@ submodules:
 #git submodule add https://github.com/rotlogix/liffy
 #git submodule add https://github.com/aboul3la/Sublist3r sublistbrute
 #git submodule add git clone https://github.com/frohoff/ciphr.git
+#git submodule add https://github.com/minimaxir/big-list-of-naughty-strings blns
 ```
 
 vpnbook:

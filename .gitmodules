@@ -109,3 +109,6 @@
 [submodule "p/ciphr"]
 	path = p/ciphr
 	url = https://github.com/frohoff/ciphr
+[submodule "p/blns"]
+	path = p/blns
+	url = https://github.com/minimaxir/big-list-of-naughty-strings

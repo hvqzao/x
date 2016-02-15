@@ -30,6 +30,7 @@ e/msf                               - msfconsole handler templates
 e/webshells/webshell.war            - .war webshell
 e/rtl8188eu                         - Hostapd configs (rtl8188eu and original)
 p/
+p/blns                              - The Big List of Naughty Strings
 p/bsql-injector                     - Blind-SQL server responses retrieval / data extraction
 p/burp                              - Burp pro, Burp free, addons and unofficial plugins
 p/ciphr                             - Data transposition, encryption, decryption, hashing etc
