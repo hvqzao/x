@@ -44,7 +44,7 @@ p/heartbleed                        - Heartbleed vulnerability exploitation
 p/hqlmap                            - Sqlmap for HQL (Hibernate Query Language)
 p/httpscreenshot                    - Screenshooting web pages
 p/inyourface                        - Java Faces attack tool
-p/ipport                            - Rapid ICMP/TCP scanning scripts
+p/ipport                            - Rapid ICMP/TCP/UDP scanning scripts
 p/jdwp-shellifier                   - JDWP (Java Debug Wire Protocol) to RCE
 p/liffy                             - LFI (Local File Inclusion) exploitation
 p/net-creds                         - Sniff searches / creds from interface or .pcap file
