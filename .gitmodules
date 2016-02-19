@@ -112,3 +112,6 @@
 [submodule "p/blns"]
 	path = p/blns
 	url = https://github.com/minimaxir/big-list-of-naughty-strings
+[submodule "p/odat"]
+	path = p/odat
+	url = https://github.com/quentinhardy/odat

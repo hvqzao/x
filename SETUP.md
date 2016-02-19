@@ -12,6 +12,12 @@ See below for additonal configuration steps
 
 ### (skip) The following will be already installed. No action required.
 
+aptitude:
+
+```sh
+sudo aptitude install thc-ssl-dos slowhttptest
+```
+
 submodules:
 
 ```sh
@@ -439,9 +445,16 @@ chmod +x SoapUI-x64-5.2.1.sh
 
 ### ciphr
 
-```
+```sh
 gem install bundler
 cd ~/x/p/ciphr
 bundle install
 sudo bundle exec rake install
+```
+
+### odat
+
+```sh
+# follow https://github.com/quentinhardy/odat#installation-optional
+# to meet requirements: sqlplus, pip install cx_Oracle
 ```

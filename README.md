@@ -50,6 +50,7 @@ p/liffy                             - LFI (Local File Inclusion) exploitation
 p/net-creds                         - Sniff searches / creds from interface or .pcap file
 p/nishang                           - Powershell-aided penetration testing
 p/nosqlmap                          - Sqlmap for NoSQL
+p/odat                              - Oracle Database Attacking Tool
 p/owtf                              - Offensive Web Testing Framework + nice Kali Linux fine-tune
 p/praedasploit                      - Printer attacks
 p/rdp-sec-check                     - RDP security checks
