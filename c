@@ -25,6 +25,8 @@ do
                 echo -e "\e[94m$i\e[39m"
                 cd $i
                 git pull origin master
+            	git pull
+            	git status
                 cd - >/dev/null
             done
             ;;
