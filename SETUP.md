@@ -429,7 +429,8 @@ cd ~/x/p
 mkdir heartbleed
 cd heartbleed
 wget https://raw.githubusercontent.com/HackerFantastic/Public/master/exploits/heartbleed.c
-gcc heartbleed.c -o heartbleed -Wl,-Bstatic -lssl -Wl,-Bdynamic -lssl3 -lcrypto
+#gcc heartbleed.c -o heartbleed -Wl,-Bstatic -lssl -Wl,-Bdynamic -lssl3 -lcrypto
+gcc -lssl -lssl3 -lcrypto heartbleed.c -o heartbleed
 chmod +x heartbleed
 ```
 
