@@ -14,9 +14,9 @@ do
     case "$p" in
         "pull")
             git pull origin master
+            git checkout
             git submodule update --init --recursive
             git submodule foreach git checkout
-            git checkout
             #git checkout -f origin/master
             ;;
         "update")
