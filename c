@@ -13,10 +13,11 @@ do
     shift
     case "$p" in
         "pull")
-            git pull origin master
-            git checkout
+            #git pull origin master
+            git pull --rebase --stat
+            #git checkout
             git submodule update --init --recursive
-            git submodule foreach git checkout
+            git submodule foreach git checkout 
             #git checkout -f origin/master
             ;;
         "update")
@@ -24,19 +25,22 @@ do
             do
                 echo -e "\e[94m$i\e[39m"
                 cd $i
-                git pull origin master
-            	git pull
-            	git status
+                #git checkout
+                #git pull origin master
+                git pull --rebase --stat
+                #git status
                 cd - >/dev/null
             done
             ;;
         "updated")
+            # repo
             r=""
             if [ $# -ne 0 ]
             then
                 r=$1
                 shift
             fi
+            # file
             f=""
             if [ $# -ne 0 ]
             then

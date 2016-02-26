@@ -156,8 +156,8 @@ deb-src http://kali.mirror.garr.it/mirrors/kali-security/ sana/updates main cont
 /etc/apt/sources.list:
 
 ```sh
-deb http://kali.mirror.garr.it/mirrors/kali kali-rolling main non-free contrib
-deb-src http://kali.mirror.garr.it/mirrors/kali kali-rolling main non-free contrib
+deb http://archive-3.kali.org/kali kali-rolling main non-free contrib
+deb-src http://archive-3.kali.org/kali kali-rolling main non-free contrib
 ```
 
 ```sh
