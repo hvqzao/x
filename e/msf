@@ -3,7 +3,9 @@
 if [ $# -eq 0 ]
 then
 	echo "Usage: `basename $0` <file.rc>" >&2
-	ls *.rc
+	echo -n "Available .rc scripts:  " >&2
+	cd "$HOME/x/e"
+	ls *.rc >&2
 	exit 1
 fi
 script -f -c "msfconsole -L -r $1" `basename $1 .rc`-`date +%Y-%m-%d_%H:%M`.log

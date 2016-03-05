@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if [ $# -lt 2 ]
+then
+	echo "Wraps any command in script with tag and current date" >&2
+	echo "Usage: `basename $0` <tag> <cmd> [params...]" >&2
+	exit 1
+fi
+tag=$1
+shift
+cmd="$@"
+script -fac "$cmd" $tag-`date +%Y-%m-%d_%H:%M`.log
