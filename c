@@ -6,6 +6,31 @@ then
     exit 1
 fi
 cd ~/x
+
+pull() {
+    git stash
+    #git pull origin master
+    git pull --rebase --stat
+    #git checkout
+    git stash pop
+    git submodule update --init --recursive
+    git submodule foreach git checkout 
+    #git checkout -f origin/master
+}
+
+update() {
+    find {b,p} -maxdepth 4 -name ".git" | sed 's/.git$//' | while read i
+    do
+	echo -e "\e[94m$i\e[39m"
+	cd $i
+	#git checkout
+	#git pull origin master
+	git pull --rebase --stat || { git checkout master && git pull --rebase --stat origin master ; }
+	#git status
+	cd - >/dev/null
+    done
+}
+
 #for p in "$@"
 while [ $# -ne 0 ]
 do
@@ -13,24 +38,10 @@ do
     shift
     case "$p" in
         "pull")
-            #git pull origin master
-            git pull --rebase --stat
-            #git checkout
-            git submodule update --init --recursive
-            git submodule foreach git checkout 
-            #git checkout -f origin/master
+            pull
             ;;
         "update")
-            find {b,p} -maxdepth 4 -name ".git" | sed 's/.git$//' | while read i
-            do
-                echo -e "\e[94m$i\e[39m"
-                cd $i
-                #git checkout
-                #git pull origin master
-                git pull --rebase --stat
-                #git status
-                cd - >/dev/null
-            done
+            update
             ;;
         "updated")
             # repo

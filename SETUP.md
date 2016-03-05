@@ -172,7 +172,7 @@ find /etc | grep \.dpkg-
 
 ```sh
 sudo aptitude install build-essential libpcap-dev rsh-client hostapd ethstats irssi \
-dmz-cursor-theme mc vim-nox alacarte flashplugin-nonfree ipcalc htop
+dmz-cursor-theme mc vim-nox alacarte flashplugin-nonfree ipcalc htop chromium
 ```
 
 ### vmware-tools
@@ -240,6 +240,7 @@ sudo aptitude install libappindicator1
 # download jdk to x/b
 # ln -s jdk1.8.0_66/ jdk
 # ln -s jdk1.8.0_66/ jre
+# download & install Java Cryptography Extension (JCE) Unlimited Strength Jurisdiction Policy Files
 ```
 
 ```sh
@@ -376,10 +377,10 @@ sudo ./bootstrap.sh
 sudo mv bootstrap.sh owtf/p_bootstrap.sh
 ```
 
-### FIX https support for wfuzz
+### FIX https support for wfuzz (obsolete)
 
 ```sh
-sudo sed -i 's/SSL_VERIFYHOST,1/SSL_VERIFYHOST,0/g' /usr/share/wfuzz/reqresp.py
+#sudo sed -i 's/SSL_VERIFYHOST,1/SSL_VERIFYHOST,0/g' /usr/share/wfuzz/reqresp.py
 ```
 
 ### oracle client basic+sqlplus (x64)

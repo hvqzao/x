@@ -1,4 +1,5 @@
 #!/bin/bash
 cd ~/x/p/burp/
 #-XX:MaxPermSize=1G
+#-Djsse.enableSNIExtension=false
 ../../b/jre/bin/java -Dsun.java2d.noddraw=true -jar `ls -tr burpsuite_pro_v*.jar|tail -1`
