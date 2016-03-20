@@ -37,7 +37,8 @@ p/ciphr                             - Data transposition, encryption, decryption
 p/clusterd                          - Application server attacking
 p/discover                          - Pentest supporting tools and notes
 p/empire                            - Powershell attack framework
-p/fuzzdb                            - Fuzzing database (old)
+p/fuzzdb                            - Fuzzing database (still in active development)
+p/get-docroots                      - LFI discovery helper script
 p/gwt-toolset                       - GWT application testing support
 p/hashid                            - Hash identifier
 p/heartbleed                        - Heartbleed vulnerability exploitation
@@ -56,7 +57,7 @@ p/praedasploit                      - Printer attacks
 p/rdp-sec-check                     - RDP security checks
 p/responder                         - LLMNR/NBT-NS/MDNS poisoner, rogue HTTP/SMB/MSSQL/FTP/LDAP
 p/rtl8188eu                         - rtl8188 specific hostapd + setup scripts
-p/seclists                          - Fuzzing database (new)
+p/seclists                          - Fuzzing database (fuzzdb fork)
 p/smbexec                           - psexec style attacks
 p/sqlmap                            - Sqlmap
 p/sublistbrute                      - Subdomains enumeration and brute-forcing

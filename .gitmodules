@@ -96,7 +96,7 @@
 	url = https://github.com/enjoiz/BSQLinjector
 [submodule "p/liffy"]
 	path = p/liffy
-	url = https://github.com/rotlogix/liffy
+	url = https://github.com/hvqzao/liffy
 [submodule "p/sublistbrute"]
 	path = p/sublistbrute
 	url = https://github.com/aboul3la/Sublist3r
@@ -115,3 +115,6 @@
 [submodule "p/odat"]
 	path = p/odat
 	url = https://github.com/quentinhardy/odat
+[submodule "p/get-docroots"]
+	path = p/get-docroots
+	url = https://github.com/ewilded/get_docroots

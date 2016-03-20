@@ -55,6 +55,7 @@ submodules:
 #git submodule add https://github.com/aboul3la/Sublist3r sublistbrute
 #git submodule add git clone https://github.com/frohoff/ciphr.git
 #git submodule add https://github.com/minimaxir/big-list-of-naughty-strings blns
+#git submodule add https://github.com/ewilded/get_docroots get-docroots
 ```
 
 vpnbook:
@@ -239,7 +240,7 @@ sudo aptitude install libappindicator1
 ```sh
 # download jdk to x/b
 # ln -s jdk1.8.0_66/ jdk
-# ln -s jdk1.8.0_66/ jre
+# ln -s jdk1.8.0_66/jre
 # download & install Java Cryptography Extension (JCE) Unlimited Strength Jurisdiction Policy Files
 ```
 
