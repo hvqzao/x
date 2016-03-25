@@ -172,8 +172,9 @@ find /etc | grep \.dpkg-
 ### aptitude
 
 ```sh
+sudo apt-get install aptitude
 sudo aptitude install build-essential libpcap-dev rsh-client hostapd ethstats irssi \
-dmz-cursor-theme mc vim-nox alacarte flashplugin-nonfree ipcalc htop chromium
+dmz-cursor-theme mc vim-nox alacarte flashplugin-nonfree ipcalc htop chromium lftp
 ```
 
 ### vmware-tools
@@ -193,7 +194,20 @@ pip install --upgrade selenium
 
 ```sh
 #/etc/rc.local
-#chmod -x /usr/sbin/avahi-daemon
+#chmod -rwx /usr/sbin/avahi-daemon
+```
+
+### openvas (fix greenbone-security-assistant daemon listening on port 80):
+
+```sh
+mkdir -p /etc/systemd/system/greenbone-security-assistant.service.d 
+cat >/etc/systemd/system/greenbone-security-assistant.service.d/local.conf <<EOF
+[Service]
+ExecStart=
+ExecStart=/usr/sbin/gsad --foreground --listen=127.0.0.1 --port=9392 --mlisten=127.0.0.1 --mport=9390 --no-redirect
+EOF
+systemctl daemon-reload
+systemctl restart greenbone-security-assistant
 ```
 
 ### iceweasel customization
