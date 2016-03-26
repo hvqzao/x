@@ -200,7 +200,8 @@ pip install --upgrade selenium
 ### openvas (fix greenbone-security-assistant daemon listening on port 80):
 
 ```sh
-mkdir -p /etc/systemd/system/greenbone-security-assistant.service.d 
+# openvas-setup
+mkdir -p /etc/systemd/system/greenbone-security-assistant.service.d
 cat >/etc/systemd/system/greenbone-security-assistant.service.d/local.conf <<EOF
 [Service]
 ExecStart=
