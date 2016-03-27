@@ -169,12 +169,13 @@ aptitude clean
 find /etc | grep \.dpkg-
 ```
 
-### aptitude
+### aptitude & supplementary packages
 
 ```sh
 sudo apt-get install aptitude
 sudo aptitude install build-essential libpcap-dev rsh-client hostapd ethstats irssi \
 dmz-cursor-theme mc vim-nox alacarte flashplugin-nonfree ipcalc htop chromium lftp
+sudo aptitude install gcc-mingw-w64-i686 gcc-mingw-w64-x86-64
 ```
 
 ### vmware-tools
@@ -226,6 +227,12 @@ systemctl restart greenbone-security-assistant
 # [ ] Push to show
 ```
 
+### mate-desktop-environment
+
+```sh
+# sudo aptitude install mate-desktop-environment
+```
+
 ### Google Chrome
 
 ```sh
@@ -242,7 +249,7 @@ sudo aptitude install libappindicator1
 # ~/x/b/firefox
 ```
 
-### alacarte
+### alacarte / mozo (MATE)
 
 ```sh
 # alacarte setup

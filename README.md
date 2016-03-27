@@ -7,9 +7,15 @@ For deployment instructions, refer to [SETUP](SETUP.md). Tested in Kali 2 (Sana)
 ```
  ~/x/
    ├── b/  - binary installations
+   ├── d/  - development*
    ├── e/  - extras
+   ├── h/  - host files*
    ├── p/  - pentest tools
-   └── t/  - undergoing tests
+   ├── r/  - research*
+   ├── t/  - tests
+   └── u/  - untrusted files*
+
+ *optional
 ```
 
 Tools map:

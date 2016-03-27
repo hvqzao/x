@@ -1,8 +1,8 @@
 /b/jdk*
 /b/jre*
+/d/
 /e/msf-*
 /h
-/n
 /o/
 /p/burp/*
 !/p/burp/burp
@@ -19,6 +19,6 @@
 /p/owtf
 /p/heartbleed/
 /p/testssl/
-/s/
+/r/
 /u
 *.swp
