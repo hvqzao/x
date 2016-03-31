@@ -174,8 +174,8 @@ find /etc | grep \.dpkg-
 ```sh
 sudo apt-get install aptitude
 sudo aptitude install build-essential libpcap-dev rsh-client hostapd ethstats irssi \
-dmz-cursor-theme mc vim-nox alacarte flashplugin-nonfree ipcalc htop chromium lftp
-sudo aptitude install gcc-mingw-w64-i686 gcc-mingw-w64-x86-64
+dmz-cursor-theme mc vim-nox alacarte flashplugin-nonfree ipcalc htop chromium lftp \
+gcc-mingw-w64-i686 gcc-mingw-w64-x86-64 clusterssh mitmf
 ```
 
 ### vmware-tools
