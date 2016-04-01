@@ -13,7 +13,9 @@ For deployment instructions, refer to [SETUP](SETUP.md). Tested in Kali 2 (Sana)
    ├── p/  - pentest tools
    ├── r/  - research*
    ├── t/  - tests
-   └── u/  - untrusted files*
+   ├── s/  - sandbox*
+   ├── u/  - untrusted files*
+   └── w/  - workspace*
 
  *optional
 ```

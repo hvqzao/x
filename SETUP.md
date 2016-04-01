@@ -1,6 +1,6 @@
 # Setup
 
-### Installation
+## Installation
 
 ```sh
 cd ~
@@ -169,6 +169,14 @@ aptitude clean
 find /etc | grep \.dpkg-
 ```
 
+## Post-installation
+
+### Kali adjustments
+
+```sh
+sudo ln -s /sbin/ifconfig /bin/ifconfig
+```
+
 ### aptitude & supplementary packages
 
 ```sh
@@ -238,7 +246,7 @@ systemctl restart greenbone-security-assistant
 ```sh
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
-sudo aptitude install libappindicator1
+sudo aptitude install libappindicator1 libcurl3
 ```
 
 ### Mozilla Firefox
@@ -257,18 +265,31 @@ sudo aptitude install libappindicator1
 # Iceweasel: /usr/bin/iceweasel -P iceweasel -no-remote
 ```
 
+### eclipse (MATE)
+
+```sh
+# SWT_GTK3=0 /path/to/eclipse
+```
+
 ### Sun Java (JDK)
 
 ```sh
 # download jdk to x/b
+cd ~/x/b
 # ln -s jdk1.8.0_66/ jdk
+a=`ls -trd jdk*.* | tail -1` ; ln -s $a jdk
 # ln -s jdk1.8.0_66/jre
+a=`ls -trd jdk*.* | tail -1` ; ln -s $a/jre
 # download & install Java Cryptography Extension (JCE) Unlimited Strength Jurisdiction Policy Files
 ```
 
 ```sh
 sudo update-alternatives --install "/usr/bin/java" java $HOME/x/b/jdk/bin/java 1
 sudo update-alternatives --set java $HOME/x/b/jdk/bin/java
+sudo update-alternatives --install "/usr/bin/javac" javac $HOME/x/b/jdk/bin/javac 1
+sudo update-alternatives --set javac $HOME/x/b/jdk/bin/javac
+sudo update-alternatives --install "/usr/bin/javaws" javaws $HOME/x/b/jdk/bin/javaws 1
+sudo update-alternatives --set javaws $HOME/x/b/jdk/bin/javaws
 sudo update-alternatives --install "/usr/bin/rmiregistry" rmiregistry $HOME/x/b/jdk/bin/rmiregistry 1
 sudo update-alternatives --set rmiregistry $HOME/x/b/jdk/bin/rmiregistry
 sudo update-alternatives --install "/usr/bin/rmid" rmid $HOME/x/b/jdk/bin/rmid 1
