@@ -2,7 +2,17 @@
 
 Pentest environment scaffolding.
 
-For deployment instructions, refer to [SETUP](SETUP.md). Tested in Kali 2 (Sana).
+## Installation
+
+```sh
+cd ~
+git clone https://github.com/hvqzao/x
+~/x/c pull
+```
+
+For further deployment instructions, refer to [SETUP](SETUP.md#post-installation). Tested in Kali 2 (Sana).
+
+### Structure
 
 ```
  ~/x/
@@ -20,7 +30,7 @@ For deployment instructions, refer to [SETUP](SETUP.md). Tested in Kali 2 (Sana)
  *optional
 ```
 
-Tools map:
+### Tools
 
 ```
 b/

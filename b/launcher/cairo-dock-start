@@ -1,0 +1,2 @@
+#!/bin/bash
+pgrep mate-session >/dev/null || cairo-dock

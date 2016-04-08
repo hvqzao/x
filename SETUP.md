@@ -183,7 +183,7 @@ sudo ln -s /sbin/ifconfig /bin/ifconfig
 sudo apt-get install aptitude
 sudo aptitude install build-essential libpcap-dev rsh-client hostapd ethstats irssi \
 dmz-cursor-theme mc vim-nox alacarte flashplugin-nonfree ipcalc htop chromium lftp \
-gcc-mingw-w64-i686 gcc-mingw-w64-x86-64 clusterssh mitmf
+gcc-mingw-w64-i686 gcc-mingw-w64-x86-64 clusterssh mitmf ethtool
 ```
 
 ### vmware-tools
@@ -263,12 +263,6 @@ sudo aptitude install libappindicator1 libcurl3
 # alacarte setup
 # Firefox: $HOME/x/b/firefox/firefox -P firefox -no-remote
 # Iceweasel: /usr/bin/iceweasel -P iceweasel -no-remote
-```
-
-### eclipse (MATE)
-
-```sh
-# SWT_GTK3=0 /path/to/eclipse
 ```
 
 ### Sun Java (JDK)
