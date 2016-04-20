@@ -10,22 +10,42 @@ git clone https://github.com/hvqzao/x
 ~/x/c pull
 ```
 
-For further deployment instructions, refer to [SETUP](SETUP.md#post-installation). Tested in Kali 2 (Sana).
+For further deployment instructions, refer to [SETUP#post-installation](SETUP.md#post-installation). Tested in Kali 2 (Sana).
+
+To pull updates from https://github.com/hvqzao/x repository:
+
+```sh
+~/x/c pull
+```
+
+To fetch newest upstream versions of all projects in repository:
+
+```sh
+~/x/c update
+```
+
+To see newest updates (general, package, file diff):
+
+```sh
+~/x/c updated
+~/x/c updated p/discover
+~/x/c updated p/discover notes/burp.txt
+```
 
 ### Structure
 
 ```
  ~/x/
-   ├── b/  - binary installations
-   ├── d/  - development*
-   ├── e/  - extras
-   ├── h/  - host files*
-   ├── p/  - pentest tools
-   ├── r/  - research*
-   ├── t/  - tests
-   ├── s/  - sandbox*
-   ├── u/  - untrusted files*
-   └── w/  - workspace*
+   ├─── b/  - binary installations
+   ├─   d/  - development*
+   ├─── e/  - extras
+   ├─   h/  - host files*
+   ├─── p/  - pentest tools
+   ├─   r/  - research*
+   ├─── t/  - tests
+   ├─   s/  - sandbox*
+   ├─   u/  - untrusted files*
+   └─   w/  - IDE workspace*
 
  *optional
 ```
