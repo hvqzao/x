@@ -2,7 +2,7 @@
 # ~/x/c - control script
 if [ "$#" -eq 0 ]
 then
-    echo "Usage: `basename $0` [pull] [update] [updated [[submodule] [file]]]" >&2
+    echo "Usage: `basename $0` [pull] [update] [updated [[submodule] [file]]] [pip-upgrade]" >&2
     exit 1
 fi
 cd ~/x
@@ -81,5 +81,10 @@ do
                     fi
                 fi
             done
+            ;;
+        "pip-upgrade")
+            echo "# Usage: ~/x/c pip-upgrade | bash"
+            echo 'pip freeze --local | awk -F= "{print $1}" | xargs -n1 -- pip install --upgrade'
+            ;;
     esac
 done
