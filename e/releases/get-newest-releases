@@ -1,0 +1,22 @@
+#!/bin/bash
+
+cat releases | egrep -v "^#" | while read i
+do
+	releases=`echo "$i"|sed "s/\t.*$//"`
+	search=`echo "$i"|sed "s/^.*\t//"`
+	repo=`echo "$releases"|sed "s/^.*\///"`
+	wget "$releases/releases" -O - 2>/dev/null | grep "releases/download" | egrep "$search" | head -1 | while read j
+	do
+		url="https://github.com"`echo "$j"|sed "s/^[^\"]*\"//"|sed "s/\".*$//"`
+		echo -n "Downloading $url ($repo)..."
+		wget --quiet "$url" && {
+			filename=`echo "$url"|sed "s/^.*\///"`
+			name=`echo "$filename"|sed "s/\.[^.]*$//"`
+			rm -rf "$repo/$name" 2>/dev/null
+			mkdir -p "$repo/$name"
+			unzip -q "$filename" -d "$repo/$name"
+			rm "$filename"
+			echo "ok."
+		} || echo "failed."
+	done
+done
