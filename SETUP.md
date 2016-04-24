@@ -10,52 +10,14 @@ git clone https://github.com/hvqzao/x
 
 See below for additonal configuration steps
 
-### (skip) The following will be already installed. No action required.
+### The following will be already installed. No action required.
+
+# skip to [SETUP#post-installation](SETUP.md#post-installation) 
 
 aptitude:
 
 ```sh
 sudo aptitude install thc-ssl-dos slowhttptest
-```
-
-submodules:
-
-```sh
-#cd ~/x/b
-#git submodule add https://github.com/hvqzao/ve
-#git submodule add https://github.com/hvqzao/endec
-#cd ~/x/p
-#git submodule add https://github.com/hatRiot/clusterd
-#git submodule add https://github.com/psypanda/hashID hashid
-#git submodule add https://github.com/PaulSec/HQLmap hqlmap
-#git submodule add https://github.com/enjoiz/BSQLinjector bsql-injector
-#git submodule add https://github.com/secretsquirrel/the-backdoor-factory
-#git submodule add https://github.com/breenmachine/httpscreenshot.git
-#git submodule add https://github.com/pentestgeek/smbexec.git
-#git submodule add https://github.com/MooseDojo/praedasploit
-#git submodule add https://github.com/sqlmapproject/sqlmap
-#git submodule add https://github.com/SpiderLabs/Responder.git responder
-#git submodule add https://github.com/tcstool/NoSQLMap.git nosqlmap
-#git submodule add https://github.com/danielmiessler/SecLists.git seclists
-#git submodule add https://github.com/DanMcInerney/net-creds.git
-#git submodule add https://github.com/derv82/wifite.git
-#git submodule add https://github.com/enjoiz/XXEinjector xxei
-#git submodule add https://github.com/sophron/wifiphisher
-#git submodule add https://github.com/leebaird/discover.git
-#git submodule add https://github.com/portcullislabs/rdp-sec-check
-#git submodule add https://github.com/lwfinger/rtl8188eu
-#git submodule add https://github.com/GDSSecurity/Windows-Exploit-Suggester.git windows-exploit-suggester
-#git submodule add https://github.com/IOActive/jdwp-shellifier
-#git submodule add https://github.com/GDSSecurity/GWT-Penetration-Testing-Toolset.git gwt-toolset
-#git submodule add https://github.com/PowerShellEmpire/Empire empire
-#git submodule add https://github.com/hvqzao/ipport
-#git submodule add https://github.com/portcullislabs/udp-proto-scanner
-#git submodule add https://github.com/samratashok/nishang
-#git submodule add https://github.com/rotlogix/liffy
-#git submodule add https://github.com/aboul3la/Sublist3r sublistbrute
-#git submodule add git clone https://github.com/frohoff/ciphr.git
-#git submodule add https://github.com/minimaxir/big-list-of-naughty-strings blns
-#git submodule add https://github.com/ewilded/get_docroots get-docroots
 ```
 
 vpnbook:
@@ -183,7 +145,7 @@ sudo ln -s /sbin/ifconfig /bin/ifconfig
 sudo apt-get install aptitude
 sudo aptitude install build-essential libpcap-dev rsh-client hostapd ethstats irssi \
 dmz-cursor-theme mc vim-nox alacarte flashplugin-nonfree ipcalc htop chromium lftp \
-gcc-mingw-w64-i686 gcc-mingw-w64-x86-64 clusterssh mitmf ethtool
+gcc-mingw-w64-i686 gcc-mingw-w64-x86-64 clusterssh mitmf ethtool bettercap
 ```
 
 ### vmware-tools

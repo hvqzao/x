@@ -10,7 +10,7 @@ git clone https://github.com/hvqzao/x
 ~/x/c pull
 ```
 
-For further deployment instructions, refer to [SETUP#post-installation](SETUP.md#post-installation). Tested in Kali 2 (Sana).
+For further deployment instructions, refer to [SETUP#post-installation](SETUP.md#post-installation). Tested in Kali 2 (Rolling).
 
 To pull updates from https://github.com/hvqzao/x repository:
 
