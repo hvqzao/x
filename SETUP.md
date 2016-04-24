@@ -199,11 +199,12 @@ pip install --upgrade pip
 pip install --upgrade selenium
 ```
 
-### disable avahi
+### disable avahi, bluetooth
 
 ```sh
 #/etc/rc.local
-#chmod -rwx /usr/sbin/avahi-daemon
+chmod -rwx /usr/sbin/avahi-daemon
+rfkill block bluetooth
 ```
 
 ### openvas (fix greenbone-security-assistant daemon listening on port 80):
