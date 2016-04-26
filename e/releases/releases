@@ -1,4 +1,5 @@
 # github repository url			release filename search pattern
 https://github.com/hvqzao/foolav	foolav
 https://github.com/AlessandroZ/LaZagne	Windows
-https://github.com/AlessandroZ/LaZagne	Linux-32|Linux-64
+#https://github.com/AlessandroZ/LaZagne	Linux-32
+#https://github.com/AlessandroZ/LaZagne	Linux-64

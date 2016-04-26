@@ -8,15 +8,27 @@ do
 	wget "$releases/releases" -O - 2>/dev/null | grep "releases/download" | egrep "$search" | head -1 | while read j
 	do
 		url="https://github.com"`echo "$j"|sed "s/^[^\"]*\"//"|sed "s/\".*$//"`
+		filename=`echo "$url"|sed "s/^.*\///"`
+		name=`echo "$filename"|sed "s/\.[^.]*$//"`
+		prev=""
+		if [ -f "$repo/$name.url" ]
+		then
+			prev=`cat "$repo/$name.url"`
+		fi
 		echo -n "$url ($repo)..."
-		wget --quiet "$url" && {
-			filename=`echo "$url"|sed "s/^.*\///"`
-			name=`echo "$filename"|sed "s/\.[^.]*$//"`
-			rm -rf "$repo/$name" 2>/dev/null
-			mkdir -p "$repo/$name"
-			unzip -q "$filename" -d "$repo/$name"
-			rm "$filename"
-			echo "ok."
-		} || echo "failed."
+		if [ -d "$repo" -a -d "$repo/$name" -a "$prev" == "$url" ]
+		then
+			echo "most current version already downloaded (skipping)"
+		else
+			wget --quiet "$url" && {
+				rm -rf "$repo/$name" 2>/dev/null
+				mkdir -p "$repo/$name"
+				unzip -q "$filename" -d "$repo/$name"
+				rm "$repo/$name.url" 2>/dev/null
+				echo "$url" >"$repo/$name.url"
+				rm "$filename"
+				echo "ok."
+			} || echo "failed."
+		fi
 	done
 done
