@@ -263,12 +263,33 @@ sudo update-alternatives --set servertool $HOME/x/b/jdk/bin/servertool
 
 ### BurpSuite Pro
 
+### odat (provides sqlplus)
+
+```sh
+# follow https://github.com/quentinhardy/odat#installation-optional
+# to meet requirements: sqlplus, pip install cx_Oracle
+```
+
 ### Metasploit
 
 ```sh
 sudo service postgresql start
 sudo msfdb init
 sudo update-rc.d postgresql enable
+```
+
+### Metasploit oci8 support (requires sqlplus)
+
+```sh
+# https://github.com/rapid7/metasploit-framework/wiki/How-to-get-Oracle-Support-working-with-Kali-Linux
+cd
+wget https://github.com/kubo/ruby-oci8/archive/ruby-oci8-2.1.8.zip
+unzip ruby-oci8-2.1.8.zip
+cd ruby-oci8-2.1.8
+make
+make install
+cd -
+rm -rf ruby-oci8*
 ```
 
 ### Cairo Dock
@@ -455,9 +476,3 @@ bundle install
 sudo bundle exec rake install
 ```
 
-### odat
-
-```sh
-# follow https://github.com/quentinhardy/odat#installation-optional
-# to meet requirements: sqlplus, pip install cx_Oracle
-```
