@@ -313,13 +313,6 @@ cd ~/x/p/the-backdoor-factory
 sudo ./install.sh
 ```
 
-### httpscreenshot
-
-```sh
-cd ~/x/p/httpscreenshot/
-chmod +x install-dependencies.sh && sudo ./install-dependencies.sh
-```
-
 ### smbexec
 
 ```sh

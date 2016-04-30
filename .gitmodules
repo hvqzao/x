@@ -7,9 +7,6 @@
 [submodule "b/ve"]
 	path = b/ve
 	url = https://github.com/hvqzao/ve
-[submodule "p/httpscreenshot"]
-	path = p/httpscreenshot
-	url = https://github.com/breenmachine/httpscreenshot.git
 [submodule "p/jdwp-shellifier"]
 	path = p/jdwp-shellifier
 	url = https://github.com/IOActive/jdwp-shellifier

@@ -81,7 +81,6 @@ p/gwt-toolset                       - GWT application testing support
 p/hashid                            - Hash identifier
 p/heartbleed                        - Heartbleed vulnerability exploitation
 p/hqlmap                            - Sqlmap for HQL (Hibernate Query Language)
-p/httpscreenshot                    - Screenshooting web pages
 p/inyourface                        - Java Faces attack tool
 p/ipport                            - Rapid ICMP/TCP/UDP scanning scripts
 p/jdwp-shellifier                   - JDWP (Java Debug Wire Protocol) to RCE
