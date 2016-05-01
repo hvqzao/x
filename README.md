@@ -62,11 +62,14 @@ b/jre                               - Oracle Java Runtime
 b/soap-ui                           - SOAP-based API testing
 b/sqldeveloper                      - Oracle SQL Developer
 b/ve                                - Python 2,3, NodeJS virtualenvs rapid setup and use
+
 e/
-e/windows-binaries/foolav.exe       - AV bypass
 e/msf                               - msfconsole handler templates
-e/webshells/webshell.war            - .war webshell
+e/releases/foolav                   - AV bypass
+e/releases/LaZagne                  - passwords gathering (outlook, browsers, winscp, ftp...)
 e/rtl8188eu                         - Hostapd configs (rtl8188eu and original)
+e/webshells/webshell.war            - .war webshell
+
 p/
 p/blns                              - The Big List of Naughty Strings
 p/bsql-injector                     - Blind-SQL server responses retrieval / data extraction
