@@ -75,13 +75,11 @@ p/blns                              - The Big List of Naughty Strings
 p/bsql-injector                     - Blind-SQL server responses retrieval / data extraction
 p/burp                              - Burp pro, Burp free, addons and unofficial plugins
 p/ciphr                             - Data transposition, encryption, decryption, hashing etc
-p/clusterd                          - Application server attacking
 p/discover                          - Pentest supporting tools and notes
 p/empire                            - Powershell attack framework
 p/fuzzdb                            - Fuzzing database (still in active development)
 p/get-docroots                      - LFI discovery helper script
 p/gwt-toolset                       - GWT application testing support
-p/hashid                            - Hash identifier
 p/heartbleed                        - Heartbleed vulnerability exploitation
 p/hqlmap                            - Sqlmap for HQL (Hibernate Query Language)
 p/inyourface                        - Java Faces attack tool
@@ -106,7 +104,6 @@ p/the-backdoor-factory              - TBF - backdooring MITM
 p/udp-proto-scanner                 - UDP enumeration and probing
 p/vpnbook                           - Free VPN
 p/wifiphisher                       - Wifi attack framework
-p/wifite                            - Automated wireless attack tool
 p/windows-exploit-suggester         - systeminfo comparison against exploit database
 p/xxei                              - XXE Injector
 p/ysoserial                         - Java Deserialization Attacks

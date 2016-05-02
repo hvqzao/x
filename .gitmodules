@@ -28,9 +28,6 @@
 [submodule "p/responder"]
 	path = p/responder
 	url = https://github.com/SpiderLabs/Responder.git
-[submodule "p/wifite"]
-	path = p/wifite
-	url = https://github.com/derv82/wifite.git
 [submodule "p/rdp-sec-check"]
 	path = p/rdp-sec-check
 	url = https://github.com/portcullislabs/rdp-sec-check
@@ -70,12 +67,6 @@
 [submodule "p/wifiphisher"]
 	path = p/wifiphisher
 	url = https://github.com/sophron/wifiphisher
-[submodule "p/clusterd"]
-	path = p/clusterd
-	url = https://github.com/hatRiot/clusterd
-[submodule "p/hashid"]
-	path = p/hashid
-	url = https://github.com/psypanda/hashID
 [submodule "p/hqlmap"]
 	path = p/hqlmap
 	url = https://github.com/PaulSec/HQLmap
