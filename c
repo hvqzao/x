@@ -2,10 +2,36 @@
 # ~/x/c - control script
 if [ "$#" -eq 0 ]
 then
-    echo "Usage: `basename $0` [pull] [update] [updated [[submodule] [file]]] [pip-upgrade]" >&2
+    echo "Usage: `basename $0` [pull] [update] [updated [[submodule] [file]]] [pip-upgrade] [remove-submodule [path]]" >&2
     exit 1
 fi
 cd ~/x
+
+remove-submodule() {
+
+    # https://gist.github.com/sharplet/6289697
+    # Adam Sharp
+    # Aug 21, 2013
+    
+    submodule_name=$(echo "$1" | sed 's/\/$//'); shift
+    echo "$submodule_name"
+
+    if git submodule status "$submodule_name" >/dev/null 2>&1; then
+        git submodule deinit -f "$submodule_name"
+        git rm -f "$submodule_name"
+    
+        #git config -f .gitmodules --remove-section "submodule.$submodule_name"
+        if [ -z "$(cat .gitmodules)" ]; then
+            git rm -f .gitmodules
+        else
+            git add .gitmodules
+        fi
+        rm -rf ".git/modules/$submodule_name"
+    else
+        echo "Submodule '$submodule_name' not found" >&2
+        return 1
+    fi
+}
 
 pull() {
     git stash
@@ -85,6 +111,10 @@ do
                     fi
                 fi
             done
+            ;;
+        "remove-submodule")
+            remove-submodule "$1"
+            shift
             ;;
         "pip-upgrade")
             echo "# Usage: ~/x/c pip-upgrade | bash"
