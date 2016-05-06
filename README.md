@@ -111,4 +111,4 @@ p/ysoserial                         - Java Deserialization Attacks
 
 ## License
 
-[MIT License](https://github.com/twbs/bootstrap/blob/master/LICENSE)
+[MIT License](LICENSE)
