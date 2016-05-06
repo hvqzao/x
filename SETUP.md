@@ -167,6 +167,7 @@ pip install --upgrade selenium
 #/etc/rc.local
 chmod -rwx /usr/sbin/avahi-daemon
 rfkill block bluetooth
+which vmhgfs-fuse && { mkdir -p /mnt/hgfs ; vmhgfs-fuse -o allow_other /mnt/hgfs } ; true
 ```
 
 ### openvas (fix greenbone-security-assistant daemon listening on port 80):
@@ -240,23 +241,18 @@ a=`ls -trd jdk*.* | tail -1` ; ln -s $a/jre
 # download & install Java Cryptography Extension (JCE) Unlimited Strength Jurisdiction Policy Files
 ```
 
+manual update-alternatives:
+
 ```sh
 sudo update-alternatives --install "/usr/bin/java" java $HOME/x/b/jdk/bin/java 1
 sudo update-alternatives --set java $HOME/x/b/jdk/bin/java
-sudo update-alternatives --install "/usr/bin/javac" javac $HOME/x/b/jdk/bin/javac 1
-sudo update-alternatives --set javac $HOME/x/b/jdk/bin/javac
-sudo update-alternatives --install "/usr/bin/javaws" javaws $HOME/x/b/jdk/bin/javaws 1
-sudo update-alternatives --set javaws $HOME/x/b/jdk/bin/javaws
-sudo update-alternatives --install "/usr/bin/rmiregistry" rmiregistry $HOME/x/b/jdk/bin/rmiregistry 1
-sudo update-alternatives --set rmiregistry $HOME/x/b/jdk/bin/rmiregistry
-sudo update-alternatives --install "/usr/bin/rmid" rmid $HOME/x/b/jdk/bin/rmid 1
-sudo update-alternatives --set rmid $HOME/x/b/jdk/bin/rmid
-sudo update-alternatives --install "/usr/bin/policytool" policytool $HOME/x/b/jdk/bin/policytool 1
-sudo update-alternatives --set policytool $HOME/x/b/jdk/bin/policytool
-sudo update-alternatives --install "/usr/bin/keytool" keytool $HOME/x/b/jdk/bin/keytool 1
-sudo update-alternatives --set keytool $HOME/x/b/jdk/bin/keytool
-sudo update-alternatives --install "/usr/bin/servertool" servertool $HOME/x/b/jdk/bin/servertool 1
-sudo update-alternatives --set servertool $HOME/x/b/jdk/bin/servertool
+```
+
+automated:
+
+```sh
+for i in `update-alternatives --get-selections | grep -- "-openjdk-" | awk '{print $1}'` ; do [ -e "$HOME/x/b/jdk/bin/$i" ] &&
+sudo update-alternatives --install "/usr/bin/$i" "$i" "$HOME/x/b/jdk/bin/$i" 1 && sudo update-alternatives --set "$i"
 ```
 
 ### vim: vimrc.local
