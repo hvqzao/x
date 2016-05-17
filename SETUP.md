@@ -253,6 +253,7 @@ automated:
 ```sh
 for i in `update-alternatives --get-selections | grep -- "-openjdk-" | awk '{print $1}'` ; do [ -e "$HOME/x/b/jdk/bin/$i" ] &&
 sudo update-alternatives --install "/usr/bin/$i" "$i" "$HOME/x/b/jdk/bin/$i" 1 && sudo update-alternatives --set "$i"
+"$HOME/x/b/jdk/bin/$i" ; done
 ```
 
 ### vim: vimrc.local
