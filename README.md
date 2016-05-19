@@ -1,6 +1,6 @@
 # x
 
-Pentest environment scaffolding.
+Pentest environment scaffolding. Supporting role in Kali Linux.
 
 ## Installation
 
