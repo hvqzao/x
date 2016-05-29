@@ -167,7 +167,7 @@ pip install --upgrade selenium
 #/etc/rc.local
 chmod -rwx /usr/sbin/avahi-daemon
 rfkill block bluetooth
-which vmhgfs-fuse && { mkdir -p /mnt/hgfs ; vmhgfs-fuse -o allow_other /mnt/hgfs } ; true
+which vmhgfs-fuse >/dev/null && { mkdir -p /mnt/hgfs ; vmhgfs-fuse -o allow_other /mnt/hgfs ; } || true
 ```
 
 ### openvas (fix greenbone-security-assistant daemon listening on port 80):
