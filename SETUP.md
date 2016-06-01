@@ -139,13 +139,16 @@ find /etc | grep \.dpkg-
 sudo ln -s /sbin/ifconfig /bin/ifconfig
 ```
 
-### aptitude & supplementary packages
+### aptitude install supplementary packages, and post configuration
 
 ```sh
 sudo apt-get install aptitude
 sudo aptitude install build-essential libpcap-dev rsh-client hostapd ethstats irssi \
 dmz-cursor-theme mc vim-nox alacarte flashplugin-nonfree ipcalc htop chromium lftp \
-gcc-mingw-w64-i686 gcc-mingw-w64-x86-64 clusterssh mitmf ethtool bettercap
+gcc-mingw-w64-i686 gcc-mingw-w64-x86-64 clusterssh mitmf ethtool bettercap veil-evasion \
+veil-catapult
+
+veil-evasion
 ```
 
 ### vmware-tools
