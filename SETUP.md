@@ -469,3 +469,16 @@ bundle install
 sudo bundle exec rake install
 ```
 
+### sniper
+
+```sh
+cd ~/x/p/sniper
+sudo ./install.sh
+```
+
+### john (jumbo)
+
+```sh
+cd ~/x/r
+wget wget http://www.openwall.com/john/j/john-1.8.0-jumbo-1.tar.gz
+```

@@ -106,3 +106,12 @@
 [submodule "p/get-docroots"]
 	path = p/get-docroots
 	url = https://github.com/ewilded/get_docroots
+[submodule "p/java-unserialize-exploits-foxglove"]
+	path = p/java-unserialize-exploits-foxglove
+	url = https://github.com/foxglovesec/JavaUnserializeExploits
+[submodule "p/clusterd"]
+	path = p/clusterd
+	url = https://github.com/hatRiot/clusterd
+[submodule "p/sniper"]
+	path = p/sniper
+	url = https://github.com/1N3/Sn1per
