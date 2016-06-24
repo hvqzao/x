@@ -115,3 +115,9 @@
 [submodule "p/sniper"]
 	path = p/sniper
 	url = https://github.com/1N3/Sn1per
+[submodule "p/powersploit"]
+	path = p/powersploit
+	url = https://github.com/PowerShellMafia/PowerSploit
+[submodule "p/wfuzz"]
+	path = p/wfuzz
+	url = https://github.com/xmendez/wfuzz

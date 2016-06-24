@@ -93,6 +93,7 @@ p/nishang                            - Powershell-aided penetration testing
 p/nosqlmap                           - Sqlmap for NoSQL
 p/odat                               - Oracle Database Attacking Tool
 p/owtf                               - Offensive Web Testing Framework + nice Kali Linux fine-tune
+p/powersploit                        - Powershell Post-Exploitation Framework
 p/praedasploit                       - Printer attacks
 p/rdp-sec-check                      - RDP security checks
 p/responder                          - LLMNR/NBT-NS/MDNS poisoner, rogue HTTP/SMB/MSSQL/FTP/LDAP
@@ -106,6 +107,7 @@ p/testssl                            - Testing for SSL vulnerabilities
 p/the-backdoor-factory               - TBF - backdooring MITM
 p/udp-proto-scanner                  - UDP enumeration and probing
 p/vpnbook                            - Free VPN
+p/wfuzz                              - Web Applications Fuzzer
 p/wifiphisher                        - Wifi attack framework
 p/windows-exploit-suggester          - systeminfo comparison against exploit database
 p/xxei                               - XXE Injector

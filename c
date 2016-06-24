@@ -49,6 +49,10 @@ update() {
     cd ~/x/e/releases
     ./get-newest-releases
     cd - >/dev/null
+    cd ~/x
+    git submodule update --init --recursive
+    git submodule foreach git checkout 
+    cd - >/dev/null
     find {b,p} -maxdepth 4 -name ".git" | sed 's/.git$//' | while read i
     do
 	echo -e "\e[94m$i\e[39m"
