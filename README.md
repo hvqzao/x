@@ -37,15 +37,12 @@ To see newest updates (general, package, file diff):
 ```
  ~/x/
    ├─── b/  - binary installations
-   ├─   d/  - development*
    ├─── e/  - extras
    ├─   h/  - host files*
+   ├─   n/  - notes*
    ├─── p/  - pentest tools
    ├─   r/  - research*
-   ├─── t/  - tests
-   ├─   s/  - sandbox*
-   ├─   u/  - untrusted files*
-   └─   w/  - IDE workspace*
+   └─── t/  - tests
 
  *optional
 ```

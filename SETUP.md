@@ -146,7 +146,7 @@ sudo apt-get install aptitude
 sudo aptitude install build-essential libpcap-dev rsh-client hostapd ethstats irssi \
 dmz-cursor-theme mc vim-nox alacarte flashplugin-nonfree ipcalc htop chromium lftp \
 gcc-mingw-w64-i686 gcc-mingw-w64-x86-64 clusterssh mitmf ethtool bettercap veil-evasion \
-veil-catapult
+veil-catapult golang
 
 veil-evasion
 ```
@@ -481,4 +481,33 @@ sudo ./install.sh
 ```sh
 cd ~/x/r
 wget wget http://www.openwall.com/john/j/john-1.8.0-jumbo-1.tar.gz
+#doc/INSTALL-UBUNTU
+```
+
+```diff
+--- MD5_std.c	2016-07-02 14:28:06.855918106 +0200
++++ MD5_std.c.orig	2016-07-02 14:27:52.775918373 +0200
+@@ -480,8 +480,7 @@
+  * is large enough.
+  */
+ #ifdef __x86_64__
+-//#define MAYBE_INLINE_BODY MAYBE_INLINE
+-#define MAYBE_INLINE_BODY
++#define MAYBE_INLINE_BODY MAYBE_INLINE
+ #else
+ #define MAYBE_INLINE_BODY
+ #endif
+```
+
+```sh
+./configure
+make
+```
+
+### wifi-pumpkin
+
+```sh
+cd ~/x/p/wifi-pumpkin
+./installer.sh --install
+# requires "export QT_X11_NO_MITSHM=1" in /etc/profile.d
 ```

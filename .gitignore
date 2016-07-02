@@ -1,6 +1,6 @@
+/b/eclipse*
 /b/jdk*
 /b/jre*
-/d/
 /e/msf-*
 /h
 /n
@@ -21,7 +21,4 @@
 /p/heartbleed/
 /p/testssl/
 /r/
-/s/
-/u
-/w/
 *.swp

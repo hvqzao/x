@@ -37,11 +37,14 @@ pull() {
     git stash
     #git pull origin master
     git pull --rebase --stat
+    git mergetool
     #git checkout
     git stash pop
     git submodule update --init --recursive
     git submodule foreach git checkout 
     #git checkout -f origin/master
+    git mergetool
+    #git stash clear
 }
 
 update() {
