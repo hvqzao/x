@@ -106,6 +106,7 @@ p/udp-proto-scanner                  - UDP enumeration and probing
 p/vpnbook                            - Free VPN
 p/wfuzz                              - Web Applications Fuzzer
 p/wifiphisher                        - Wifi attack framework
+p/wifi-pumpkin                       - Framework for Rogue Wi-Fi Access Point Attack
 p/windows-exploit-suggester          - systeminfo comparison against exploit database
 p/xxei                               - XXE Injector
 p/ysoserial                          - Java Deserialization Attacks
