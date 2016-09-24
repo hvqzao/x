@@ -1,6 +1,9 @@
 /b/eclipse*
 /b/jdk*
 /b/jre*
+/b/tomcat*
+/b/netbeans*
+/d
 /e/msf-*
 /h
 /n
@@ -15,6 +18,7 @@
 !/p/burp/BurpSuite3.ico
 !/p/burp/BurpSuite3.png
 !/p/burp/unofficial
+/p/busybox/busybox*
 /p/inyourface/dist
 /p/vpnbook/VPNBOOK
 /p/owtf

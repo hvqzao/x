@@ -1,0 +1,2 @@
+#!/bin/bash
+wget https://busybox.net/downloads/binaries/latest/busybox-x86_64

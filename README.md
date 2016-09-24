@@ -37,6 +37,7 @@ To see newest updates (general, package, file diff):
 ```
  ~/x/
    ├─── b/  - binary installations
+   ├─   d/  - downloads*
    ├─── e/  - extras
    ├─   h/  - host files*
    ├─   n/  - notes*
@@ -61,6 +62,7 @@ b/sqldeveloper                       - Oracle SQL Developer
 b/ve                                 - Python 2,3, NodeJS virtualenvs rapid setup and use
 
 e/
+e/misc                               - miscellaneous tools (trival fuzzer, tcp xor proxy)
 e/msf                                - msfconsole handler templates
 e/releases/foolav                    - AV bypass
 e/releases/LaZagne                   - passwords gathering (outlook, browsers, winscp, ftp...)
@@ -75,6 +77,7 @@ p/ciphr                              - Data transposition, encryption, decryptio
 p/clusterd                           - Jboss / Tomcat / WebLogic / Axis2 / Glassfish / ColdFusion toolkit
 p/discover                           - Pentest supporting tools and notes
 p/empire                             - Powershell attack framework
+p/eyewitness                         - Take screens of websites, check header info and default creds
 p/fuzzdb                             - Fuzzing database (still in active development)
 p/get-docroots                       - LFI discovery helper script
 p/gwt-toolset                        - GWT application testing support

@@ -20,7 +20,14 @@ aptitude:
 sudo aptitude install thc-ssl-dos slowhttptest
 ```
 
-vpnbook:
+### busybox:
+
+```sh
+cd ~/x/p/busybox
+./get
+```
+
+### vpnbook:
 
 ```sh
 #cd ~/x/p
@@ -30,7 +37,7 @@ vpnbook:
 #ln -s thsosrtl/VeePeeNee/VeePeeNee.sh 
 ```
 
-ysoserial:
+### ysoserial:
 
 ```sh
 #cd ~/x/p
@@ -40,7 +47,7 @@ ysoserial:
 #git submodule add https://github.com/frohoff/ysoserial src
 ```
 
-burp plugins:
+### burp plugins:
 
 ```sh
 #cd ~/x/p/burp/unofficial
@@ -52,7 +59,7 @@ burp plugins:
 #git submodule add https://github.com/hvqzao/burp-wildcard wildcard
 ```
 
-.war webshell:
+### .war webshell:
 
 ```sh
 #cd $HOME/x/p/fuzzdb
@@ -67,7 +74,7 @@ burp plugins:
 # Usage after deploying: /webshell/cmd.jsp?cmd=id
 ```
 
-inyourface (java faces attacks):
+### inyourface (java faces attacks):
 
 ```sh
 #cd ~/x/p
@@ -511,3 +518,11 @@ cd ~/x/p/wifi-pumpkin
 ./installer.sh --install
 # requires "export QT_X11_NO_MITSHM=1" in /etc/profile.d
 ```
+
+### EyeWitness
+
+```sh
+cd ~/x/p/eyewitness/setup
+./setup.sh
+```
+
