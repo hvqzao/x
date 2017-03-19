@@ -127,3 +127,6 @@
 [submodule "p/eyewitness"]
 	path = p/eyewitness
 	url = https://github.com/ChrisTruncer/EyeWitness
+[submodule "p/pret"]
+	path = p/pret
+	url = https://github.com/RUB-NDS/PRET

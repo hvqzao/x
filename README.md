@@ -95,6 +95,7 @@ p/odat                               - Oracle Database Attacking Tool
 p/owtf                               - Offensive Web Testing Framework + nice Kali Linux fine-tune
 p/powersploit                        - Powershell Post-Exploitation Framework
 p/praedasploit                       - Printer attacks
+p/pret                               - Printer Exploitation Toolkit
 p/rdp-sec-check                      - RDP security checks
 p/responder                          - LLMNR/NBT-NS/MDNS poisoner, rogue HTTP/SMB/MSSQL/FTP/LDAP
 p/rtl8188eu                          - rtl8188 specific hostapd + setup scripts
