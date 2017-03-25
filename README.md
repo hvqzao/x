@@ -96,6 +96,7 @@ p/owtf                               - Offensive Web Testing Framework + nice Ka
 p/powersploit                        - Powershell Post-Exploitation Framework
 p/praedasploit                       - Printer attacks
 p/pret                               - Printer Exploitation Toolkit
+p/ptdl                               - Automates file downloading from plaintext directory listing
 p/rdp-sec-check                      - RDP security checks
 p/responder                          - LLMNR/NBT-NS/MDNS poisoner, rogue HTTP/SMB/MSSQL/FTP/LDAP
 p/rtl8188eu                          - rtl8188 specific hostapd + setup scripts
