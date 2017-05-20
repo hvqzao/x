@@ -133,3 +133,6 @@
 [submodule "p/ptdl"]
 	path = p/ptdl
 	url = https://github.com/enjoiz/ptdl
+[submodule "p/vulscan"]
+	path = p/vulscan
+	url = https://github.com/scipag/vulscan
