@@ -45,6 +45,10 @@ cd ~/x/p/busybox
 #cd ysoserial
 #wget "https://github.com/frohoff/ysoserial/releases/download/v0.0.3/ysoserial-0.0.3-all.jar"
 #git submodule add https://github.com/frohoff/ysoserial src
+
+#wget "https://jitpack.io/com/github/frohoff/ysoserial/master-SNAPSHOT/ysoserial-master-SNAPSHOT.jar"
+
+#git clone https://github.com/pwntester/SerialKillerBypassGadgetCollection
 ```
 
 ### burp plugins:
@@ -149,13 +153,13 @@ sudo ln -s /sbin/ifconfig /bin/ifconfig
 ### aptitude install supplementary packages, and post configuration
 
 ```sh
-sudo apt-get install aptitude
-sudo aptitude install build-essential libpcap-dev rsh-client hostapd ethstats irssi \
+sudo apt install aptitude build-essential libpcap-dev rsh-client hostapd ethstats irssi \
 dmz-cursor-theme mc vim-nox alacarte flashplugin-nonfree ipcalc htop chromium lftp \
 gcc-mingw-w64-i686 gcc-mingw-w64-x86-64 clusterssh mitmf ethtool bettercap veil-evasion \
-veil-catapult golang
+veil-catapult golang ncat eyewitness
 
-veil-evasion
+#veil-evasion
+veil
 ```
 
 ### vmware-tools

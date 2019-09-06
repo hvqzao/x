@@ -1,4 +1,4 @@
 #!/bin/bash
 cd $HOME/x/p/burp/free
 #-XX:MaxPermSize=1G
-../../../b/jre/bin/java -Dsun.java2d.noddraw=true -jar `ls -tr burpsuite_free_v*.jar|tail -1`
+../../../b/jre/bin/java -Dsun.java2d.noddraw=true -jar `ls -tr burpsuite_community_v*.jar|tail -1`

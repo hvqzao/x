@@ -133,3 +133,15 @@
 [submodule "p/vulscan"]
 	path = p/vulscan
 	url = https://github.com/scipag/vulscan
+[submodule "p/jexboss"]
+	path = p/jexboss
+	url = https://github.com/joaomatosf/jexboss
+[submodule "p/ldapper"]
+	path = p/ldapper
+	url = https://github.com/shellster/LDAPPER
+[submodule "p/payloads"]
+	path = p/payloads
+	url = https://github.com/swisskyrepo/PayloadsAllTheThings
+[submodule "p/serialkiller"]
+	path = p/serialkiller
+	url = https://github.com/pwntester/SerialKillerBypassGadgetCollection

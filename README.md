@@ -87,12 +87,14 @@ p/inyourface                         - Java Faces attack tool
 p/ipport                             - Rapid ICMP/TCP/UDP scanning scripts
 p/jdwp-shellifier                    - JDWP (Java Debug Wire Protocol) to RCE
 p/java-unserialize-exploits-foxglove - Java deserialize exploits (foxglove)
+p/jexboss                            - JBoss exploitation tool
 p/liffy                              - LFI (Local File Inclusion) exploitation
 p/net-creds                          - Sniff searches / creds from interface or .pcap file
 p/nishang                            - Powershell-aided penetration testing
 p/nosqlmap                           - Sqlmap for NoSQL
 p/odat                               - Oracle Database Attacking Tool
 p/owtf                               - Offensive Web Testing Framework + nice Kali Linux fine-tune
+p/payloads                           - Payloads All The Things
 p/powersploit                        - Powershell Post-Exploitation Framework
 p/praedasploit                       - Printer attacks
 p/pret                               - Printer Exploitation Toolkit
@@ -101,6 +103,7 @@ p/rdp-sec-check                      - RDP security checks
 p/responder                          - LLMNR/NBT-NS/MDNS poisoner, rogue HTTP/SMB/MSSQL/FTP/LDAP
 p/rtl8188eu                          - rtl8188 specific hostapd + setup scripts
 p/seclists                           - Fuzzing database (fuzzdb fork)
+p/serialkiller                       - SerialKillerBypassGadgetCollection
 p/sniper                             - Sn1per - Automated Pentest Recon Scanner
 p/smbexec                            - psexec style attacks
 p/sqlmap                             - Sqlmap
